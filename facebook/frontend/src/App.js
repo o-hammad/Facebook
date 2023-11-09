@@ -5,7 +5,7 @@ import LoginForm from './components/LoginForm/index';
 function App() {
   return (
     <Switch>
-      <Route path="/">
+      <Route path="/login">
         <LoginForm />
       </Route>
     </Switch>

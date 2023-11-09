@@ -1,10 +1,9 @@
 class User < ApplicationRecord
   has_secure_password
 
-  validates :username, 
+  validates :phone_num, 
     uniqueness: true, 
-    length: { in: 3..30 }, 
-    format: { without: URI::MailTo::EMAIL_REGEXP, message:  "can't be an email" }
+    length: { is: 10 }
   validates :email, 
     uniqueness: true, 
     length: { in: 3..255 }, 
@@ -15,7 +14,7 @@ class User < ApplicationRecord
   before_validation :ensure_session_token
 
   def self.find_by_credentials(credential, password)
-    field = credential =~ URI::MailTo::EMAIL_REGEXP ? :email : :username
+    field = credential =~ URI::MailTo::EMAIL_REGEXP ? :email : :phone_num
     user = User.find_by(field => credential)
     user&.authenticate(password)
   end
