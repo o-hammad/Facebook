@@ -1,9 +1,6 @@
 class User < ApplicationRecord
   has_secure_password
 
-  validates :phone_num, 
-    uniqueness: true, 
-    length: { is: 10 }
   validates :email, 
     uniqueness: true, 
     length: { in: 3..255 }, 

@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import * as sessionActions from '../../store/session';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
+import SignupForm from '../SignupForm/index';
 
 function LoginForm() {
     const dispatch = useDispatch();
@@ -10,6 +11,7 @@ function LoginForm() {
     const [credential, setCredential] = useState('');
     const [password, setPassword] = useState('');
     const [errors, setErrors] = useState([]);
+    const [modalOpen, setModalOpen] = useState(false);
 
     if (sessionUser) return <Redirect to="/" />;
 
@@ -32,30 +34,34 @@ function LoginForm() {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
-            <ul>
-                {errors.map(error => <li key={error}>{error}</li>)}
-            </ul>
-            <label>
-                Phone or Email
-                <input
-                    type="text"
-                    value={credential}
-                    onChange={(e) => setCredential(e.target.value)}
-                    required
-                />
-            </label>
-            <label>
-                Password
-                <input
-                    type="password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    required
-                />
-            </label>
-            <button type="submit">Log In</button>
-        </form>
+        <div>
+            <form onSubmit={handleSubmit}>
+                <ul>
+                    {errors.map(error => <li key={error}>{error}</li>)}
+                </ul>
+                <label>
+                    Phone or Email
+                    <input
+                        type="text"
+                        value={credential}
+                        onChange={(e) => setCredential(e.target.value)}
+                        required
+                    />
+                </label>
+                <label>
+                    Password
+                    <input
+                        type="password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        required
+                    />
+                </label>
+                <button type="submit">Log In</button>
+            </form>
+            <button onClick={() => (setModalOpen(true))}>Create new account</button>
+            {modalOpen && <SignupForm setModal={setModalOpen}/> }
+        </div>
     );
 }
 
