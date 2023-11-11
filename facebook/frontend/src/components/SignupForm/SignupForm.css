@@ -1,0 +1,32 @@
+ .modalBackground {
+     position: fixed;
+     top: 0%;
+     left: 0%;
+     width: 100vw;
+     height: 100vh;
+     /* margin-top: 50%; */
+     /*set to a negative number 1/2 of your height*/
+     /* margin-left: -50%; */
+     z-index: 98;
+     background-color: white;
+     opacity: 0.6;
+ }
+
+ .signupContainer {
+
+     position: fixed;
+     top: 50%;
+     left: 50%;
+     width: 20em;
+     height: 20em;
+     margin-top: -10em;
+     /*set to a negative number 1/2 of your height*/
+     margin-left: -10em;
+     /*set to a negative number 1/2 of your width*/
+     border: 1px solid #ccc;
+     border: 2px solid black;
+     z-index: 100;
+     background-color: white;
+     opacity: 100;
+ }
+

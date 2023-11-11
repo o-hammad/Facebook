@@ -21,7 +21,9 @@ ApplicationRecord.transaction do
     first_name: "Demo",
     last_name: "Lition",
     email: 'demo@user.io', 
-    password: 'password'
+    password: 'password',
+    birthday: '1985-10-08',
+    gender: "M"
   )
 
   num = 1234567890
@@ -32,7 +34,9 @@ ApplicationRecord.transaction do
       first_name: Faker::Name.first_name,
       last_name: Faker::Name.last_name,
       email: Faker::Internet.unique.email,
-      password: 'password'
+      password: 'password',
+      birthday: Faker::Date.birthday(min_age: 18, max_age: 65),
+      gender: ["M", "F"].sample
     }) 
   end
 

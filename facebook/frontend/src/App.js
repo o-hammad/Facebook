@@ -1,12 +1,16 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import LoginForm from './components/LoginForm/index';
+import Navigation from './components/Navigation';
 
 function App() {
   return (
     <Switch>
       <Route path="/login">
         <LoginForm />
+      </Route>
+      <Route path="/">
+        <Navigation />
       </Route>
     </Switch>
   );

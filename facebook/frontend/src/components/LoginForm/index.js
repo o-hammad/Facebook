@@ -11,7 +11,7 @@ function LoginForm() {
     const [credential, setCredential] = useState('');
     const [password, setPassword] = useState('');
     const [errors, setErrors] = useState([]);
-    const [modalOpen, setModalOpen] = useState(false);
+    const [showModal, setShowModal] = useState(false);
 
     if (sessionUser) return <Redirect to="/" />;
 
@@ -34,33 +34,50 @@ function LoginForm() {
     }
 
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
-                <ul>
-                    {errors.map(error => <li key={error}>{error}</li>)}
-                </ul>
-                <label>
-                    Phone or Email
-                    <input
-                        type="text"
-                        value={credential}
-                        onChange={(e) => setCredential(e.target.value)}
-                        required
-                    />
-                </label>
-                <label>
-                    Password
-                    <input
-                        type="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        required
-                    />
-                </label>
-                <button type="submit">Log In</button>
-            </form>
-            <button onClick={() => (setModalOpen(true))}>Create new account</button>
-            {modalOpen && <SignupForm setModal={setModalOpen}/> }
+        <div className='background'>
+            <div className='upperBackground'>
+                <div className='leftInnerBox'>
+                    <img className="fbLogo" src="https://static.xx.fbcdn.net/rsrc.php/y1/r/4lCu2zih0ca.svg" alt="Facebook"></img>
+                </div>
+                <div className='rightInnerBox'>
+                    <div className='loginBox'>
+                        <form onSubmit={handleSubmit}>
+                            <ul>
+                                {errors.map(error => <li key={error}>{error}</li>)}
+                            </ul>
+                            <div className='emailBox'>
+                                <input
+                                    type="text"
+                                    value={credential}
+                                    placeholder='Email'
+                                    className='emailField'
+                                    onChange={(e) => setCredential(e.target.value)}
+                                    required
+                                />
+                            </div>
+                            <div className='passwordBox'>
+                                <input
+                                    type="password"
+                                    value={password}
+                                    className='passwordField'
+                                    placeholder='Password'
+                                    onChange={(e) => setPassword(e.target.value)}
+                                    required
+                                />
+                            </div>
+                            <div className='loginButtonContainer'>
+                                <button type="submit" className='loginButton'>Log In</button>
+                            </div>
+                        </form>
+                        <div className='createAccountContainer'>
+                            <button onClick={() => setShowModal(true)} className='createAccountButton'>Create new account</button>
+                            {showModal && <SignupForm setShowModal={setShowModal} />}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className='lowerBackGround'>
+            </div>
         </div>
     );
 }
