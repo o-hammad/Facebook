@@ -13,7 +13,7 @@
     display: flex;
     justify-content: center;
     width: 100vw;
-    height: 70vh;
+    height: 72vh;
     background-color: #f0f2f5;
 }
 
@@ -21,20 +21,19 @@
     display: flex;
     width: 500px;
     padding-right: 48px;
-    align-items: center;
 }
 
 .rightInnerBox {
     display: flex;
-    align-items: center;
     justify-content: center;
+    margin-top: 13%;
     width: 40%;
 }
 
 .loginBox {
-    height: 50%;
-    width: 60%;
-    border-radius: 5%;
+    height: 350px;
+    width: 800px;
+    border-radius: 8px;
     box-sizing: border-box;
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
@@ -52,7 +51,7 @@
     margin: 3%;
     font-size: 15px;
     border: none;
-    background-color: #dfe3ee;
+    background-color: #e9f0fd;
     border: 1px solid lightgray;
     height: 40px;
 }
@@ -65,13 +64,14 @@
 .loginButtonContainer .loginButton {
     background-color: #1877f2;
     color: white;
+    font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
     width: 100%;
-    font-size: 20px;
+    font-size: 22px;
     margin: 3%;
     border-radius: 8px;
-    margin-bottom: 10%;
-    height: 40px;
+    margin-bottom: 7%;
+    height: 50px;
     border: none;
 }
 
@@ -81,7 +81,7 @@
     margin: 3%;
     border-radius: 8px;
     font: 20px;
-    background-color: #dfe3ee;
+    background-color: #e9f0fd;
     border: 1px solid lightgray;
     height: 40px;
 }
@@ -90,14 +90,17 @@
     display: flex;
     justify-content: center;
     height: 13%;
-    padding: 5%;
+    padding: 7%;
     border-top: 1px solid lightgrey;
 }
 
 .createAccountContainer .createAccountButton {
     background-color: #42b72a;
     color: white;
-    font-size: 17px;
+    font-size: 18px;
+    font-weight: bold;
     border-radius: 8px;
     border: none;
+    height: 50px;
+    width: 70%;
 }

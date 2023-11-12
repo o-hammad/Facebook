@@ -12,9 +12,9 @@ function SignupForm({setShowModal}) {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [errors, setErrors] = useState([]);
-    const [birthMonth, setBirthMonth] = useState("");
-    const [birthDay, setBirthDay] = useState("");
-    const [birthYear, setBirthYear] = useState("");
+    const [birthMonth, setBirthMonth] = useState("01");
+    const [birthDay, setBirthDay] = useState("01");
+    const [birthYear, setBirthYear] = useState("2023");
     const [gender, setGender] = useState("");
 
     if (sessionUser) return <Redirect to="/" />;
@@ -55,22 +55,38 @@ function SignupForm({setShowModal}) {
     return (
         <div className="modalBackground">
             <div className="signupContainer">
-                <button onClick={() => setShowModal(false)}> X </button>
-                <form onSubmit={handleSubmit}>
+                <div className="header">
+                    <div className="leftHeader">
+                        <div className="title">
+                            <h1>Sign Up</h1>
+                        </div>
+                        <div className="subTitle">
+                            <p>It's quick and easy.</p>
+                        </div>
+                    </div>
+                    <div className="rightHeader">
+                        <div className="closeX">
+                            <button onClick={() => setShowModal(false)} className="closeXButton"><span>X</span></button>
+                        </div>
+                    </div>
+                </div>
+                <form onSubmit={handleSubmit} className="signupFormDetails">
                     <ul>
                         {errors.map(error => <li key={error}>{error}</li>)}
                     </ul>
-                    <div>
+                    <div className="namesInput">
                         <input
                             type="text"
-                            placeholder="First Name"
+                            placeholder="First name"
+                            className="firstNameInput"
                             value={firstName}
                             onChange={(e) => setFirstName(e.target.value)}
                             required
                         />
                         <input
                             type="text"
-                            placeholder="Last Name"
+                            placeholder="Last name"
+                            className="lastNameInput"
                             value={lastName}
                             onChange={(e) => setLastName(e.target.value)}
                             required
@@ -80,6 +96,7 @@ function SignupForm({setShowModal}) {
                         <input
                             type="text"
                             placeholder="Email"
+                            className="emailInput"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                             required
@@ -88,51 +105,71 @@ function SignupForm({setShowModal}) {
                     <div>
                         <input
                             type="password"
-                            placeholder="New Password"
+                            placeholder="New password"
+                            className="passwordInput"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                             required
                         />
                     </div>
                     <div>
-                        <label>
+                        <label className="birthdayLabel">
                             Birthday
-                            <select value={birthMonth} onChange={(e) => setBirthMonth(e.target.value)}>
-                                <option value="01">Jan</option>
-                                <option value="02">Feb</option>
-                                <option value="03">Mar</option>
-                                <option value="04">Apr</option>
-                                <option value="05">May</option>
-                                <option value="06">Jun</option>
-                                <option value="07">Jul</option>
-                                <option value="08">Aug</option>
-                                <option value="09">Sep</option>
-                                <option value="10">Oct</option>
-                                <option value="11">Nov</option>
-                                <option value="12">Dec</option>
-                            </select>
-                            <select value={birthDay} onChange={(e) => setBirthDay(e.target.value)}>
-                                {
-                                    [...Array(31)].map((_, i) => i + 1)
-                                        .map(i => <option key={i} value={i}>{i}</option>)
-                                }
-                            </select>
-                            <select value={birthYear} onChange={(e) => setBirthYear(e.target.value)}>
-                                {
-                                    years.map(i => <option key={i} value={i}>{i}</option>)
-                                }
-                            </select>
+                            <div className="birthdayInput">
+                                <select value={birthMonth} onChange={(e) => setBirthMonth(e.target.value)} className="birthMonthInput">
+                                    <option value="01">Jan</option>
+                                    <option value="02">Feb</option>
+                                    <option value="03">Mar</option>
+                                    <option value="04">Apr</option>
+                                    <option value="05">May</option>
+                                    <option value="06">Jun</option>
+                                    <option value="07">Jul</option>
+                                    <option value="08">Aug</option>
+                                    <option value="09">Sep</option>
+                                    <option value="10">Oct</option>
+                                    <option value="11">Nov</option>
+                                    <option value="12">Dec</option>
+                                </select>
+                                <select value={birthDay} onChange={(e) => setBirthDay(e.target.value)} className="birthDayInput">
+                                    {
+                                        [...Array(31)].map((_, i) => i + 1)
+                                            .map(i => <option key={i} value={i}>{i}</option>)
+                                    }
+                                </select>
+                                <select value={birthYear} onChange={(e) => setBirthYear(e.target.value)} className="birthYearInput">
+                                    {
+                                        years.map(i => <option key={i} value={i}>{i}</option>)
+                                    }
+                                </select>
+                            </div>
                         </label>
                     </div>
-                    <div>
-                        <label>
+                    <div className="genderInputContainer">
+                        <label className="genderLabel">
                             Gender
-                            <input type="radio" value="M" name="gender" onChange={(e) => setGender(e.target.value)}/> Male
-                            <input type="radio" value="F" name="gender" onChange={(e) => setGender(e.target.value)} /> Female
-                            <input type="radio" value="Other" name="gender" /> Other
+                            <div className="genderInput">
+                                <div className="femaleInputContainer">
+                                    <label className="femaleLabel">Female
+                                        <input type="radio" value="F" name="gender" onChange={(e) => setGender(e.target.value)} className="femaleInput"/>
+                                    </label>
+                                </div>
+                                <div className="maleInputContainer">
+                                    <label className="maleLabel">Male
+                                        <input type="radio" value="M" name="gender" onChange={(e) => setGender(e.target.value)} className="maleInput"/>
+                                    </label>
+                                </div>
+                            </div>
                         </label>
                     </div>
-                    <button type="submit">Sign Up</button>
+                    <div className="disclaimer1">
+                        <p>People who use our service may have uploaded your contact information to Facebook.</p>
+                    </div>
+                    <div className="disclaimer2">
+                        <p>By clicking Sign Up, you agree to our Terms, Privacy Policy and Cookies Policy. You may receive SMS Notifications from us and can opt out any time.</p>
+                    </div>
+                    <div className="signUpButtonContainer">
+                        <button type="submit" className="signUpButton">Sign Up</button>
+                    </div>
                 </form>
             </div>
         </div>
