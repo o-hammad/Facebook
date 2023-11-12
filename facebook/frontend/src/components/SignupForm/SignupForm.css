@@ -1,0 +1,208 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.modalBackground {
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100vw;
+     height: 100vh;
+     background-color: rgba(255, 255, 255, 0.6);
+     z-index: 98;
+ }
+
+ .signupContainer {
+     position: fixed;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     width: 26em;
+     height: 30em;
+     border: 1px solid #ccc;
+     z-index: 100;
+     background-color: white;
+     padding: 20px;
+    border-radius: 8px;
+ }
+
+ .header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5%;
+ }
+
+ .header h1 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+ }
+
+ .header p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: grey;
+ }
+
+ .closeXButton {
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+ }
+
+ .namesInput {
+    border-top: 1px solid lightgray;
+    margin-top: 10px;
+ }
+
+ .firstNameInput {
+    margin-top: 15px;
+    height: 30px;
+    width: 45%;
+    margin-right: 5%;
+    margin-bottom: 2%;
+    background-color: #f5f6f8;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+ }
+
+ .lastNameInput {
+    margin-top: 15px;
+    height: 30px;
+    width: 45%;
+    margin-bottom: 3%;
+    background-color:#f5f6f8;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+ }
+
+ .emailInput {
+    height: 30px;
+    width: 97%;
+    margin-bottom: 2%;
+    background-color: #f5f6f8;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+ }
+
+ .passwordInput {
+    height: 30px;
+    width: 97%;
+    margin-bottom: 2%;
+    background-color: #f5f6f8;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+ }
+
+ .birthMonthInput {
+    height: 30px;
+    width: 31%;
+    margin-right: 10px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    font-size: 15px;
+ }
+
+ .birthDayInput {
+    height: 30px;
+    width: 31%;
+    margin-right: 10px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    font-size: 15px;
+ }
+
+ .birthYearInput {
+    height: 30px;
+    width: 31%;
+    margin-bottom: 2%;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    font-size: 15px;
+ }
+
+ .birthdayLabel {
+    font-size: 13px;
+    color: gray;
+ }
+
+.genderInputContainer {
+    display: flex;
+    width: 100%;
+}
+
+ .genderLabel {
+    font-size: 13px;
+    color: gray;
+ }
+
+ .genderInput {
+    display: flex;
+ }
+
+ .femaleInputContainer {
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    height: 30px;
+    color: black;
+    width: 195px;
+    margin-right: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ }
+
+ .femaleInput {
+    margin-left: 80px;
+ }
+
+ .femaleLabel {
+    font-size: 15px;
+ }
+
+ .maleInputContainer {
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    height: 30px;
+    color: black;
+    width: 195px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ }
+
+.maleInput {
+    margin-left: 80px;
+}
+
+ .maleLabel {
+    font-size: 15px;
+ }
+
+ .signUpButton {
+    background-color: #00a400;
+    color: white;
+    border: 1px solid lightgray;
+    height: 35px;
+    width: 50%;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+ }
+
+ .signUpButtonContainer {
+    display: flex;
+    justify-content: center;
+ }
+
+ .disclaimer1 {
+    font-size: 12px;
+    color: gray;
+ }
+
+  .disclaimer2 {
+      font-size: 12px;
+      color: gray;
+      margin-bottom: 8%;
+  }

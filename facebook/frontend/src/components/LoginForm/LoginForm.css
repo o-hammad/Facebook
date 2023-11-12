@@ -1,0 +1,106 @@
+/* * {
+    border: solid 1px red;
+} */
+
+.background {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.upperBackground {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    height: 72vh;
+    background-color: #f0f2f5;
+}
+
+.leftInnerBox {
+    display: flex;
+    width: 500px;
+    padding-right: 48px;
+}
+
+.rightInnerBox {
+    display: flex;
+    justify-content: center;
+    margin-top: 13%;
+    width: 40%;
+}
+
+.loginBox {
+    height: 350px;
+    width: 800px;
+    border-radius: 8px;
+    box-sizing: border-box;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
+    padding: 2%;
+}
+
+.fbLogo {
+    height: 50%;
+    width: 50%;
+}
+
+.emailBox .emailField {
+    width: 92%;
+    border-radius: 8px;
+    margin: 3%;
+    font-size: 15px;
+    border: none;
+    background-color: #e9f0fd;
+    border: 1px solid lightgray;
+    height: 40px;
+}
+
+.loginButtonContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.loginButtonContainer .loginButton {
+    background-color: #1877f2;
+    color: white;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    font-size: 22px;
+    margin: 3%;
+    border-radius: 8px;
+    margin-bottom: 7%;
+    height: 50px;
+    border: none;
+}
+
+.passwordBox .passwordField {
+    width: 92%;
+    border-radius: 5%;
+    margin: 3%;
+    border-radius: 8px;
+    font: 20px;
+    background-color: #e9f0fd;
+    border: 1px solid lightgray;
+    height: 40px;
+}
+
+.createAccountContainer {
+    display: flex;
+    justify-content: center;
+    height: 13%;
+    padding: 7%;
+    border-top: 1px solid lightgrey;
+}
+
+.createAccountContainer .createAccountButton {
+    background-color: #42b72a;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
+    border: none;
+    height: 50px;
+    width: 70%;
+}
