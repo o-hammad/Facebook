@@ -33,6 +33,24 @@ function LoginForm() {
             });
     }
 
+    const handleDemoLogin = (e) => {
+        e.preventDefault();
+
+        return dispatch(sessionActions.login({credential: "demo@user.io", password: "password"}))
+            .catch(async (res) => {
+                let data;
+                try {
+                    // .clone() essentially allows you to read the response body twice
+                    data = await res.clone().json();
+                } catch {
+                    data = await res.text(); // Will hit this case if the server is down
+                }
+                if (data?.errors) setErrors(data.errors);
+                else if (data) setErrors([data]);
+                else setErrors([res.statusText]);
+            });
+    }
+
     return (
         <div className='background'>
             <div className='upperBackground'>
@@ -42,9 +60,6 @@ function LoginForm() {
                 <div className='rightInnerBox'>
                     <div className='loginBox'>
                         <form onSubmit={handleSubmit}>
-                            <ul>
-                                {errors.map(error => <li key={error}>{error}</li>)}
-                            </ul>
                             <div className='emailBox'>
                                 <input
                                     type="text"
@@ -55,6 +70,9 @@ function LoginForm() {
                                     required
                                 />
                             </div>
+                            <ul className='errors'>
+                                {errors.map(error => <li key={error}>{error}</li>)}
+                            </ul>
                             <div className='passwordBox'>
                                 <input
                                     type="password"
@@ -69,6 +87,9 @@ function LoginForm() {
                                 <button type="submit" className='loginButton'>Log In</button>
                             </div>
                         </form>
+                        <div className='demoLoginContainer'>
+                            <button type="submit" className='demoLoginButton' onClick={handleDemoLogin}>Demo Login</button>
+                        </div>
                         <div className='createAccountContainer'>
                             <button onClick={() => setShowModal(true)} className='createAccountButton'>Create new account</button>
                             {showModal && <SignupForm setShowModal={setShowModal} />}
