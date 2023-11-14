@@ -52,7 +52,7 @@ function LoginForm() {
     }
 
     return (
-        <div className='background'>
+        <div className='background1'>
             <div className='upperBackground'>
                 <div className='leftInnerBox'>
                     <img className="fbLogo" src="https://static.xx.fbcdn.net/rsrc.php/y1/r/4lCu2zih0ca.svg" alt="Facebook"></img>

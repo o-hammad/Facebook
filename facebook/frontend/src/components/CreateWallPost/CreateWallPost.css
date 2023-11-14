@@ -1,0 +1,23 @@
+.modalBackground_two {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 800px;
+    height: 800px;
+    background-color: rgba(255, 255, 255, 0.6);
+    z-index: 98;
+}
+
+.editPostContainer {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 26em;
+    height: 30em;
+    border: 1px solid #ccc;
+    z-index: 100;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+}

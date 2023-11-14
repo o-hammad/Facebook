@@ -1,0 +1,18 @@
+.navLogo {
+    width: 40px;
+    margin-left: 10px;
+}
+
+.navContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.profile-dropdown {
+    list-style-type: none;
+}
+
+.icon {
+    width: 40px;
+}
+

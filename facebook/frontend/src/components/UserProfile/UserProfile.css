@@ -1,0 +1,97 @@
+* {
+    border: 1px solid red;
+}
+
+.background {
+    display: flex;
+    flex-direction: column;
+}
+
+.upperbackGround {
+    width: 100vw;
+    height: 50vh;
+    top: 70px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.lowerbackGround {
+    width: 100vw;
+    height: 50vh;
+    display: flex;
+    justify-content: space-between;
+}
+
+.coverPhotoContainer {
+    width: 100vw;
+    height: 50vh;
+}
+
+.belowCoverPhoto {
+    display: flex;
+    justify-content: space-between;
+}
+
+.editProfileButton {
+    width: 150px;
+}
+
+.editProfileButtonContainer {
+    width: 200px;
+
+}
+
+.profilePicture {
+    height: 200px;
+    width: 200px;
+    margin-top: -75px;
+    border-radius: 100%;
+}
+
+.belowCoverPhotoLeft {
+    display: flex;
+    margin-left: 200px;
+}
+
+.leftColumn {
+    margin-left: 200px;
+    width: 425px;
+}
+
+.rightColumn {
+    margin-right: 200px;
+    width: 525px;
+}
+
+.belowCoverPhotoRight {
+    display: flex;
+    align-items: center;
+}
+
+.profileName {
+    display: flex;
+    justify-content: center;
+}
+
+.commentIcon {
+    width: 50px;
+    border-radius: 100%;
+}
+
+.postContainer {
+    display: flex;
+}
+
+.postText {
+    width: 75%;
+    border-radius: 8px;
+}
+
+.postButton {
+    width: 25%;
+    border-radius: 8px;
+}
+
+
+

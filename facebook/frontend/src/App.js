@@ -8,6 +8,7 @@ function App() {
   return (
     <Switch>
       <Route path="/users/:userId">
+        <Navigation />
         <UserProfile />
       </Route>
       <Route path="/login">
