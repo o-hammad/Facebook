@@ -10,9 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_11_10_174419) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_14_183028) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "posts", force: :cascade do |t|
+    t.bigint "poster_id", null: false
+    t.bigint "postee_id", null: false
+    t.text "body", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["postee_id"], name: "index_posts_on_postee_id"
+    t.index ["poster_id"], name: "index_posts_on_poster_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", null: false
@@ -28,4 +38,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_10_174419) do
     t.index ["session_token"], name: "index_users_on_session_token", unique: true
   end
 
+  add_foreign_key "posts", "users", column: "postee_id"
+  add_foreign_key "posts", "users", column: "poster_id"
 end
