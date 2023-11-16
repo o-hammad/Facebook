@@ -2,16 +2,18 @@ import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { userProfileView } from '../../store/user';
 import { useDispatch, useSelector } from 'react-redux';
-import { useState } from 'react';
 import "./UserProfile.css";
 import Icon from "../../assets/images/blank_user icon.jpg";
-import CreateWallPost from '../CreateWallPost';
+import { createPostThunk } from '../../store/post';
+import PostsIndex from '../PostsIndex';
+
 
 function UserProfile () {
     const { userId } = useParams();
     const dispatch = useDispatch();
-    const user = useSelector(state => state.user[userId]);
+    const user = useSelector(state => state.users[userId]);
     const sessionUser = useSelector(state => state.session.user);
+    let body;
     
     useEffect(() => {
         dispatch(userProfileView(userId))
@@ -23,8 +25,28 @@ function UserProfile () {
     }
 
     const handlePost = (e) => {
+        debugger
+        
         e.preventDefault();
+        
+        const posterId = sessionUser.id;
+        const posteeId = user.id;
+        
+        debugger
 
+        return dispatch(createPostThunk({ posterId, posteeId, body }))
+            // .catch(async (res) => {
+            //     let data;
+            //     try {
+            //         // .clone() essentially allows you to read the response body twice
+            //         data = await res.clone().json();
+            //     } catch {
+            //         data = await res.text(); // Will hit this case if the server is down
+            //     }
+            //     if (data?.errors) setErrors(data.errors);
+            //     else if (data) setErrors([data]);
+            //     else setErrors([res.statusText]);
+            // });
     }
 
     return (
@@ -39,7 +61,7 @@ function UserProfile () {
 
                         </div>
                         <div className='profileName'>
-                            <p>{`${user.user.firstName} ${user.user.lastName}`}</p>
+                            <p>{`${user.firstName} ${user.lastName}`}</p>
                         </div>
                     </div>
                     <div className='belowCoverPhotoRight'>
@@ -61,21 +83,24 @@ function UserProfile () {
                 <div className='rightColumn'>
                     <div className='postContainer'>
                         <img src={Icon} alt="userProfilePic" className='commentIcon' /> 
-                        <input 
-                            type='text' 
-                            placeholder={sessionUser.id === user.id ? 
-                                `What's on your mind?`:
-                                `Write something to ${user.user.firstName}`} 
-                            className='postText'
-                        />
-                        <button
-                            onSubmit={handlePost}
-                            className='postButton'
-                            >Post
-                        </button>
+                        <form onSubmit={handlePost} className='postForm'>
+                            <input 
+                                type="text"
+                                onChange={(e) => body = e.target.value}
+                                placeholder={sessionUser.id === user.id ? 
+                                    `What's on your mind?`:
+                                    `Write something to ${user.firstName}`} 
+                                className='postText'
+                            />
+                            <button
+                                type = "submit"
+                                className='postButton'
+                                >Post
+                            </button>
+                        </form>
                     </div>
                     <div className='postsContainer'>
-
+                        <PostsIndex />
                     </div>
                 </div>
             </div>
