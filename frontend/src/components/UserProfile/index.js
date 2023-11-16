@@ -10,20 +10,21 @@ import CreateWallPost from '../CreateWallPost';
 function UserProfile () {
     const { userId } = useParams();
     const dispatch = useDispatch();
-    const [showModal, setShowModal] = useState(false);
+    const user = useSelector(state => state.user[userId]);
+    const sessionUser = useSelector(state => state.session.user);
     
     useEffect(() => {
         dispatch(userProfileView(userId))
     }, [dispatch, userId])
 
-    const user = useSelector(state => state.user[userId]);
-
+    
     if (!user) {
         return null;
     }
 
     const handlePost = (e) => {
         e.preventDefault();
+
     }
 
     return (
@@ -62,7 +63,9 @@ function UserProfile () {
                         <img src={Icon} alt="userProfilePic" className='commentIcon' /> 
                         <input 
                             type='text' 
-                            placeholder={`Write something to ${user.user.firstName}`} 
+                            placeholder={sessionUser.id === user.id ? 
+                                `What's on your mind?`:
+                                `Write something to ${user.user.firstName}`} 
                             className='postText'
                         />
                         <button
