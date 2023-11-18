@@ -2,11 +2,19 @@ import csrfFetch from "./csrf";
 
 const GET_ONE_USER = "GET_ONE_USER";
 const CREATE_POST = "post/CREATE_POST";
+const REMOVE_POST = "post/REMOVE_POST";
 
 const createPost = post => ({
     type: CREATE_POST,
     payload: post
 })
+
+export const removePost = postId => {
+    return {
+        type: REMOVE_POST,
+        postId
+    }
+};
 
 export const createPostThunk = (post) => async dispatch => {
     const { posterId, posteeId, body} = post;
@@ -22,7 +30,18 @@ export const createPostThunk = (post) => async dispatch => {
 
     if (response.ok) {
         const post = await response.json()
+        debugger
         dispatch(createPost(post))
+    }
+}
+
+export const deletePostThunk = (postId) => async dispatch => {
+    const response = await csrfFetch(`/api/posts/${postId}`, {
+        method: "DELETE"
+    })
+
+    if (response.ok) {
+        dispatch(removePost(postId))
     }
 }
 
@@ -35,8 +54,15 @@ const postReducer = (state = {}, action) => {
             const nextState = { ...newState, ...action.payload.posts }
             return nextState
         case CREATE_POST:
-            const withPost = { ...newState, ...action.payload.post }
+            debugger
+            const withPost = { ...newState, ...action.payload }
+            debugger
             return withPost
+        case REMOVE_POST:
+            debugger
+            delete newState[action.postId];
+            debugger
+            return newState;
         default:
             return state;
     }

@@ -21,7 +21,7 @@ function Navigation() {
                 <img src={Logo} alt="Logo" className='navLogo'/>
             </div>
             <div>
-                <ul>
+                <ul className='dropDown'>
                     <li>
                         {sessionLinks}
                     </li>

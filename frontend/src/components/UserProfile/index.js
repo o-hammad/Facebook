@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom';
 import { userProfileView } from '../../store/user';
 import { useDispatch, useSelector } from 'react-redux';
 import "./UserProfile.css";
-import Icon from "../../assets/images/blank_user icon.jpg";
 import { createPostThunk } from '../../store/post';
 import PostsIndex from '../PostsIndex';
 
@@ -53,15 +52,17 @@ function UserProfile () {
         <div className='background'>
             <div className='upperbackGround'>
                 <div className='coverPhotoContainer'>
-
+                    <div className='coverPhoto'>
+                        <img src="https://facebook85-seeds.s3.amazonaws.com/pexels-leah-kelley-3935703.jpg" alt="coverPhoto" className='actualCoverPhoto'></img>
+                    </div>
                 </div>
                 <div className='belowCoverPhoto'>
                     <div className='belowCoverPhotoLeft'>
-                        <div className='profilePicture'>
-
+                        <div className='profilePictureContainer'>
+                            <img src="https://facebook85-seeds.s3.amazonaws.com/blank-head-profile-pic-for-a-man.jpg" alt="profilePicture" className='profilePicture'></img>
                         </div>
                         <div className='profileName'>
-                            <p>{`${user.firstName} ${user.lastName}`}</p>
+                            <h1>{`${user.firstName} ${user.lastName}`}</h1>
                         </div>
                     </div>
                     <div className='belowCoverPhotoRight'>
@@ -72,17 +73,15 @@ function UserProfile () {
             <div className='lowerbackGround'>
                 <div className='leftColumn'>
                     <div className='friendsContainer'>
-                        <div className='friendsHeader'>
-                            <h1>Friends</h1>
-                        </div>
                         <div className='friendsThumbnails'>
+                            <h1>Friends</h1>
                             <h1>Friends Thumbnail Holder</h1>
                         </div>
                     </div>
                 </div>
                 <div className='rightColumn'>
                     <div className='postContainer'>
-                        <img src={Icon} alt="userProfilePic" className='commentIcon' /> 
+                        <img src={sessionUser.profileImage} alt="userProfilePic" className='commentIcon' /> 
                         <form onSubmit={handlePost} className='postForm'>
                             <input 
                                 type="text"

@@ -1,6 +1,7 @@
 json.user do
   json.set! @user.id do
-    json.extract! @user, :id, :email, :first_name, :last_name, :birthday, :gender, :created_at, :updated_at
+    json.extract! @user, :id, :email, :first_name, :last_name, :birthday, :profile_image, :cover_photo, :gender, :created_at, :updated_at
+    json.photoUrl @user.photo.attached? ? @user.photo.url : nil
   end
 end
 
@@ -12,8 +13,8 @@ end
 #   end
 # end
 
-user_posts = @user.rcvd_posts.includes(:poster)
-user_post_ids = @user.rcvd_posts.order('created_at DESC').pluck(:id)
+user_posts = @user.rcvd_posts.includes(:poster, :postee)
+# user_post_ids = @user.rcvd_posts.order('created_at DESC').pluck(:id)
 
 json.posts do
   user_posts.each do |post|

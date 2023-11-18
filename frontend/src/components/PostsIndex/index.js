@@ -1,17 +1,30 @@
 import { useSelector } from "react-redux";
 import PostItem from "../PostItem";
+import { useEffect } from "react";
 
 function PostsIndex () {
+    // const orderedPosts = useSelector(state => state.posts.postIds);
+    // const postDetails = useSelector(state => state.posts);
+
+    // debugger
+
+    // return (
+    //     <div className="postsContainer">
+    //         {orderedPosts.map((postId) => { 
+    //             return <PostItem post={postDetails[postId]} />
+    //         })}
+    //     </div>
+    // )
+
+    
     const rcvdPosts = useSelector(state => state.posts);
     const posts = Object.values(rcvdPosts);
 
     function compareByCreation(a, b) {
-        debugger
         return new Date(b.createdAt) - new Date(a.createdAt);
     }
 
     const sortedPosts = posts.sort(compareByCreation)
-    debugger
 
     return (
         <div className="postsContainer">
