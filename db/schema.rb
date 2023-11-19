@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_11_18_160626) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_19_093707) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -42,6 +42,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_18_160626) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "friends", force: :cascade do |t|
+    t.bigint "friender_id", null: false
+    t.bigint "friendee_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["friendee_id"], name: "index_friends_on_friendee_id"
+    t.index ["friender_id", "friendee_id"], name: "index_friends_on_friender_id_and_friendee_id", unique: true
+    t.index ["friender_id"], name: "index_friends_on_friender_id"
+  end
+
   create_table "posts", force: :cascade do |t|
     t.bigint "poster_id", null: false
     t.bigint "postee_id", null: false
@@ -70,6 +80,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_18_160626) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "friends", "users", column: "friendee_id"
+  add_foreign_key "friends", "users", column: "friender_id"
   add_foreign_key "posts", "users", column: "postee_id"
   add_foreign_key "posts", "users", column: "poster_id"
 end

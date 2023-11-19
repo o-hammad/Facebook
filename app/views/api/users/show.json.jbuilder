@@ -5,13 +5,13 @@ json.user do
   end
 end
 
-# json.friends do
-#   @user.friends.each do |friend|
-#     json.set! friend.id do
-#       json.extract! friend, :id, :email, :first_name, :last_name, :birthday, :gender, :created_at, :updated_at
-#     end
-#   end
-# end
+json.friends do
+  @user.friends.each do |friend|
+    json.set! friend.id do
+      json.extract! friend, :id, :email, :first_name, :last_name, :birthday, :gender, :created_at, :updated_at
+    end
+  end
+end
 
 user_posts = @user.rcvd_posts.includes(:poster, :postee)
 # user_post_ids = @user.rcvd_posts.order('created_at DESC').pluck(:id)

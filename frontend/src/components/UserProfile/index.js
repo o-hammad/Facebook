@@ -67,6 +67,11 @@ function UserProfile () {
                     <div className='belowCoverPhotoRight'>
                         
                     </div>
+                </div>    
+            </div>
+            <div className='divider'>
+                <div className='innerLine'>
+        
                 </div>
             </div>
             <div className='lowerbackGround'>
