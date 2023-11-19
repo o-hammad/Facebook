@@ -9,16 +9,18 @@ class Api::PostsController < ApplicationController
         end
     end
 
-    def show
-        
-    end
-
     def update
+        @post = Post.find_by(id: params[:id])
 
+        if @post.update(post_params)
+            render :show
+        end
     end
 
     def destroy
+        @post = Post.find_by(id: params[:id])
 
+        @post.destroy
     end
 
     private

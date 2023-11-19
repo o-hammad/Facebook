@@ -2,15 +2,19 @@
     border: 1px solid red;
 } */
 
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 .background {
+    margin-top: 100px;
     display: flex;
     flex-direction: column;
 }
 
 .upperbackGround {
     width: 100vw;
-    height: 50vh;
-    top: 70px;
+    height: 70vh;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -21,16 +25,32 @@
     height: 50vh;
     display: flex;
     justify-content: space-between;
+    background-color: #f0f2f5
 }
 
 .coverPhotoContainer {
     width: 100vw;
-    height: 50vh;
+    height: 45vh;
+    display: flex;
+    justify-content: center;
+}
+
+.coverPhoto {
+    width: 70%;
+    height: 100%;
+    border-radius: 0 0 8px 8px;
+}
+
+.actualCoverPhoto {
+    width: 100%;
+    height: 100%;
+    border-radius: 0 0 8px 8px;
 }
 
 .belowCoverPhoto {
     display: flex;
     justify-content: space-between;
+    height: 150px;
 }
 
 .editProfileButton {
@@ -42,11 +62,27 @@
 
 }
 
-.profilePicture {
+.profileName {
+    width: 300px
+}
+
+.profileName p {
+    width: 300px;
+    height: 50px;
+}
+
+.profilePictureContainer {
     height: 200px;
     width: 200px;
+    border: 5px solid white;
+}
+
+.profilePicture {
+    height: 100%;
+    width: 100%;
     margin-top: -75px;
     border-radius: 100%;
+    border: 5px solid white;
 }
 
 .belowCoverPhotoLeft {
@@ -56,12 +92,13 @@
 
 .leftColumn {
     margin-left: 200px;
-    width: 425px;
+    width: 30%;
 }
 
 .rightColumn {
     margin-right: 200px;
-    width: 525px;
+    margin-left: 5%;
+    width: 40%;
 }
 
 .belowCoverPhotoRight {
@@ -81,17 +118,29 @@
 
 .postContainer {
     display: flex;
+    margin-top: 2%;
 }
 
 .postText {
     width: 75%;
-    border-radius: 8px;
+    border-radius: 20px;
 }
 
 .postButton {
     width: 25%;
     border-radius: 8px;
+    background-color: #1877f2;
+    color: white;
 }
 
+.postForm {
+    display: flex;
+    width: 100%;
+}
+
+.friendsContainer {
+    background-color: white;
+    border-radius: 8px;
+}
 
 

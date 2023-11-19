@@ -11,6 +11,8 @@ class User < ApplicationRecord
 
   before_validation :ensure_session_token
 
+  has_one_attached :photo
+
   has_many :sent_posts,
     primary_key: :id,
     foreign_key: :poster_id,

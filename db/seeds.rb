@@ -1,3 +1,5 @@
+require "open-uri"
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 #
@@ -17,16 +19,16 @@ ApplicationRecord.transaction do
 
   puts "Creating users..."
   # Create one user with an easy to remember username, email, and password:
-  User.create!(
+  demo = User.create!(
     first_name: "Demo",
     last_name: "Lition",
     email: 'demo@user.io', 
     password: 'password',
     birthday: '1985-10-08',
-    gender: "M"
+    gender: "M",
+    profile_image: "https://facebook85-seeds.s3.amazonaws.com/blank-head-profile-pic-for-a-man.jpg",
+    cover_photo: "https://facebook85-seeds.s3.amazonaws.com/pexels-leah-kelley-3935703.jpg"
   )
-
-  num = 1234567890
 
   # More users
   10.times do 
@@ -37,6 +39,8 @@ ApplicationRecord.transaction do
       password: 'password',
       birthday: Faker::Date.birthday(min_age: 18, max_age: 65),
       gender: ["M", "F"].sample
+      profile_image: "https://facebook85-seeds.s3.amazonaws.com/blank-head-profile-pic-for-a-man.jpg",
+      cover_photo: "https://facebook85-seeds.s3.amazonaws.com/pexels-leah-kelley-3935703.jpg"
     }) 
   end
 

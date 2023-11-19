@@ -3,16 +3,35 @@
     margin-left: 10px;
 }
 
-.navContainer {
+/* .navContainer {
     display: flex;
     justify-content: space-between;
+    z-index: 100;
+} */
+
+.navContainer {
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: white;
+    height: 10%;
 }
 
 .profile-dropdown {
     list-style-type: none;
+    position: fixed;
+    margin-left: -10%;
 }
 
 .icon {
     width: 40px;
+    border-radius: 100%;
 }
 
+.miniProfile {
+    height: 50px;
+    width: 100px;
+}

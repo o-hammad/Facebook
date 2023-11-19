@@ -1,20 +1,17 @@
 
 
-const GET_ONE = "user/GET_ONE";
+const GET_ONE_USER = "GET_ONE_USER";
 
 const getOneUser = user => ({
-    type: GET_ONE,
+    type: GET_ONE_USER,
     payload: user
 });
 
 export const userProfileView = (id) => async dispatch => {
     const response = await fetch(`/api/users/${id}`)
 
-    debugger
-
     if (response.ok) {
         const user = await response.json()
-        debugger
         dispatch(getOneUser(user))
     }
 }
@@ -22,12 +19,11 @@ export const userProfileView = (id) => async dispatch => {
 const userReducer = (state = {}, action) => {
     const newState = Object.assign({}, Object.freeze(state));
 
-    debugger
-
     switch(action.type) {
-        case GET_ONE:
-            newState[action.payload.user.id] = action.payload
-            return newState
+        case GET_ONE_USER:
+            // newState[action.payload.user.id] = action.payload
+            const nextState = {...newState, ...action.payload.user}
+            return nextState
         default:
             return state;
     }
