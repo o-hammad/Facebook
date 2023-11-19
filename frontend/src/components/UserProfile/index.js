@@ -31,7 +31,6 @@ function UserProfile () {
         const posterId = sessionUser.id;
         const posteeId = user.id;
         
-        debugger
 
         return dispatch(createPostThunk({ posterId, posteeId, body }))
             // .catch(async (res) => {
@@ -74,7 +73,7 @@ function UserProfile () {
                 <div className='leftColumn'>
                     <div className='friendsContainer'>
                         <div className='friendsThumbnails'>
-                            <h1>Friends</h1>
+                            <h3>Friends</h3>
                             <h1>Friends Thumbnail Holder</h1>
                         </div>
                     </div>
