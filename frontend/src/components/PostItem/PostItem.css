@@ -32,11 +32,15 @@
     margin-left: 3%;
     background-color: #1877f2;
     color: white;
+    border: 1px solid lightgray;
+    border-radius: 20px;
 }
 
 .editPost {
     background-color: #1877f2;
     color: white;
+    border: 1px solid lightgray;
+    border-radius: 20px;
 }
 
 .modal-overlay {

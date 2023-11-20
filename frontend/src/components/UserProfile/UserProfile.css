@@ -30,7 +30,7 @@
 
 .coverPhotoContainer {
     width: 100vw;
-    height: 45vh;
+    height: 65vh;
     display: flex;
     justify-content: center;
 }
@@ -72,8 +72,8 @@
 }
 
 .profilePictureContainer {
-    height: 200px;
-    width: 200px;
+    height: 150px;
+    width: 150px;
     border: 5px solid white;
 }
 
@@ -124,13 +124,15 @@
 .postText {
     width: 75%;
     border-radius: 20px;
+    border: 1px solid lightgray;
 }
 
 .postButton {
     width: 25%;
-    border-radius: 8px;
+    border-radius: 20px;
     background-color: #1877f2;
     color: white;
+    border: 1px solid lightgray;
 }
 
 .postForm {
@@ -141,6 +143,26 @@
 .friendsContainer {
     background-color: white;
     border-radius: 8px;
+    width: 100%;
+    padding: 2%;
+    margin-top: 3%;
 }
 
+.friendsThumbnails {
+    width: 100%;
+}
 
+.divider {
+    height: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.innerLine {
+    width: 80%;
+    border-top: 1px solid lightgray;
+}
+
+.belowCoverPhoto h1 {
+    height: 40px;
+}

@@ -27,6 +27,20 @@ class User < ApplicationRecord
     inverse_of: :postee,
     dependent: :destroy
 
+  def friends
+    friend_ids = Friend.where(friender_id: self.id).pluck(:friendee_id)
+
+    friendships = []
+
+    friend_ids.each do |friend_id|
+      friend = User.find_by(id: friend_id);
+      friendships.push(friend)  
+    end
+
+    friendships
+  end
+
+
   def self.find_by_credentials(credential, password)
     field = credential =~ URI::MailTo::EMAIL_REGEXP ? :email : :email
     user = User.find_by(field => credential)

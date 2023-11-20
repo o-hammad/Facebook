@@ -11,11 +11,15 @@ require "open-uri"
 ApplicationRecord.transaction do 
   puts "Destroying tables..."
   # Unnecessary if using `rails db:seed:replant`
+  Friend.destroy_all
+  Post.destroy_all
   User.destroy_all
 
   puts "Resetting primary keys..."
   # For easy testing, so that after seeding, the first `User` has `id` of 1
   ApplicationRecord.connection.reset_pk_sequence!('users')
+
+end
 
   puts "Creating users..."
   # Create one user with an easy to remember username, email, and password:
@@ -38,11 +42,10 @@ ApplicationRecord.transaction do
       email: Faker::Internet.unique.email,
       password: 'password',
       birthday: Faker::Date.birthday(min_age: 18, max_age: 65),
-      gender: ["M", "F"].sample
+      gender: ["M", "F"].sample,
       profile_image: "https://facebook85-seeds.s3.amazonaws.com/blank-head-profile-pic-for-a-man.jpg",
       cover_photo: "https://facebook85-seeds.s3.amazonaws.com/pexels-leah-kelley-3935703.jpg"
     }) 
   end
 
   puts "Done!"
-end

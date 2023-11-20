@@ -1,0 +1,13 @@
+.friendshipsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 25%;
+}
+
+.friendContainer {
+    flex-wrap: wrap;
+    width: 28%;
+    display: flex;
+    margin-left: 5%;
+    margin-bottom: 20%;
+}
