@@ -1,16 +1,22 @@
 class Api::FriendsController < ApplicationController
     def create
-        @friendship = Friend.new([{friender_id: params[:friender_id], friendee_id: params[:friendee_id]}, {friender_id: params[:friendee_id], friendee_id: params[:friender_id]}])
+        @friendship = Friend.create([{friender_id: params[:friender_id], friendee_id: params[:friendee_id]}, {friender_id: params[:friendee_id], friendee_id: params[:friender_id]}])
+        
+        @friend = User.find_by(id: params[:friender_id])
 
-        if @friendship.save
-            render :show
-        end
+        render :show
     end
 
     def destroy
-        @friendship = Friend.find_by(id: params[:id])
+        @friendship_forwards = Friend.find_by(friender_id: params[:user_id], friendee_id: params[:current_user_id])
+        @friendship_backwards = Friend.find_by(friender_id: params[:current_user_id], friendee_id: params[:user_id])
 
-        @friendship.destroy
+        @friendship_forwards.destroy
+        @friendship_backwards.destroy
+
+        @friend = User.find_by(id: params[:current_user_id])
+   
+        render :show
     end
 
     private

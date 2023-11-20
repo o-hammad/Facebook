@@ -4,21 +4,23 @@ const GET_ONE_USER = "GET_ONE_USER";
 const CREATE_FRIEND = "friend/CREATE_FRIEND";
 const REMOVE_FRIEND = "friend/REMOVE_FRIEND";
 
-export const createFriend = friendship => ({
+export const createFriend = friend => ({
     type: CREATE_FRIEND,
-    payload: friendship
+    payload: friend
 })
 
-export const removeFriend = friendshipId => {
+export const removeFriend = frienderId => {
     return {
         type: REMOVE_FRIEND,
-        payload: friendshipId
+        payload: frienderId
     }
 };
 
 
 export const createFriendThunk = (friendship) => async dispatch => {
     const { frienderId, friendeeId } = friendship;
+
+    debugger
 
     const response = await csrfFetch("/api/friends", {
         method: "POST",
@@ -29,20 +31,28 @@ export const createFriendThunk = (friendship) => async dispatch => {
     });
 
     if (response.ok) {
-        const post = await response.json()
+        const friend = await response.json()
         debugger
-        dispatch(createFriend(post))
+        return dispatch(createFriend(friend))
     }
 }
 
-export const deleteFriendThunk = (friendshipId) => async dispatch => {
+export const deleteFriendThunk = (userId, currentUserId) => async dispatch => {
     debugger
-    const response = await csrfFetch(`/api/friends/${friendshipId}`, {
-        method: "DELETE"
+
+    const response = await csrfFetch("/api/friends/39", {
+        method: "DELETE",
+        body: JSON.stringify({
+            current_user_id: currentUserId,
+            user_id: userId
+        })
     })
 
     if (response.ok) {
-        dispatch(removeFriend(friendshipId))
+        const friendRemoval = await response.json()
+        debugger
+        const friendId = Object.values(friendRemoval)
+        return dispatch(removeFriend(friendId))
     }
 }
 
@@ -58,7 +68,8 @@ const friendReducer = (state = {}, action) => {
             const nextState = { ...newState, ...action.payload }
             return nextState
         case REMOVE_FRIEND:
-            delete newState[action.payload];
+            debugger
+            delete newState[action.payload[0].id];
             return newState;
         default:
             return state;

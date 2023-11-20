@@ -8,7 +8,7 @@ end
 json.friends do
   @user.friends.each do |friend|
     json.set! friend.id do
-      json.extract! friend, :id, :email, :first_name, :last_name, :birthday, :gender, :created_at, :updated_at
+      json.extract! friend, :id, :email, :first_name, :last_name, :profile_image, :birthday, :gender, :created_at, :updated_at
     end
   end
 end

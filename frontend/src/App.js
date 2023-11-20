@@ -19,7 +19,7 @@ function App() {
         <Navigation />
       </Route>
     </Switch>
-  );
+  )
 }
 
 export default App;

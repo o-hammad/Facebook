@@ -28,8 +28,7 @@ class User < ApplicationRecord
     dependent: :destroy
 
   def friends
-    friend_ids = Friend.where(friender_id: self.id)
-      .or(Friend.where(friendee_id: self.id)).pluck(:friendee_id)
+    friend_ids = Friend.where(friender_id: self.id).pluck(:friendee_id)
 
     friendships = []
 

@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
-import { useSelector } from "react-redux";
 import './Navigation.css'
 
 function ProfileButton({ user }) {
     const dispatch = useDispatch();
     const [showMenu, setShowMenu] = useState(false);
-    const sessionUser = useSelector(state => state.session.user);
 
     const openMenu = () => {
         if (showMenu) return;
@@ -33,8 +31,8 @@ function ProfileButton({ user }) {
 
     return (
         <>
-            <button onClick={openMenu}>
-                <img src={sessionUser.profileImage} alt="Icon Placeholder" className="icon"/>
+            <button onClick={openMenu} className="profileLogoutIcon">
+                <img src="https://facebook85-seeds.s3.amazonaws.com/blank-head-profile-pic-for-a-man.jpg" alt="Icon Placeholder" className="icon"/>
             </button>
             {showMenu && (
                 <ul className="profile-dropdown">

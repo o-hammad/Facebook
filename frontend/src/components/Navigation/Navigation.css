@@ -1,6 +1,11 @@
+/* * {
+    border: 1px solid red;
+} */
+
 .navLogo {
     width: 40px;
     margin-left: 10px;
+    margin-top: 1%;
 }
 
 /* .navContainer {
@@ -34,4 +39,16 @@
 .miniProfile {
     height: 50px;
     width: 100px;
+    border: 1px solid black;
+}
+
+.dropDown {
+    list-style-type: none;
+    margin: 0;
+    margin-top: 1%;
+}
+
+.profileLogoutIcon {
+    border: none;
+    background: none;
 }

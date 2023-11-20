@@ -17,13 +17,14 @@ export const userProfileView = (id) => async dispatch => {
 }
 
 const userReducer = (state = {}, action) => {
-    const newState = Object.assign({}, Object.freeze(state));
+    // const newState = Object.assign({}, Object.freeze(state));
 
     switch(action.type) {
         case GET_ONE_USER:
             // newState[action.payload.user.id] = action.payload
-            const nextState = {...newState, ...action.payload.user}
-            return nextState
+            // const nextState = {...newState, ...action.payload.user}
+            // return nextState
+            return action.payload.user
         default:
             return state;
     }

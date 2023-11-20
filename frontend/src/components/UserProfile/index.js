@@ -5,6 +5,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import "./UserProfile.css";
 import { createPostThunk } from '../../store/post';
 import PostsIndex from '../PostsIndex';
+import FriendsIndex from '../FriendsIndex';
+import { createFriendThunk } from '../../store/friend';
+import { deleteFriendThunk } from '../../store/friend';
 
 
 function UserProfile () {
@@ -12,6 +15,7 @@ function UserProfile () {
     const dispatch = useDispatch();
     const user = useSelector(state => state.users[userId]);
     const sessionUser = useSelector(state => state.session.user);
+    const friends = useSelector(state => state.friends);
     let body;
     
     useEffect(() => {
@@ -31,6 +35,15 @@ function UserProfile () {
         const posterId = sessionUser.id;
         const posteeId = user.id;
         
+        const inputField = document.getElementsByClassName("postText")
+
+        debugger
+        if (sessionUser.id === user.id) {
+            inputField.value = `What's on your mind?`
+        } else {
+            inputField.value = `Write something to ${user.firstName}`
+        }
+        debugger
 
         return dispatch(createPostThunk({ posterId, posteeId, body }))
             // .catch(async (res) => {
@@ -47,22 +60,40 @@ function UserProfile () {
             // });
     }
 
+    const handleUnFriend = (e) => {
+        e.preventDefault();
+
+        return(dispatch(deleteFriendThunk(user.id, sessionUser.id)))
+    }
+
+    const handleFriend = (e) => {
+        e.preventDefault();
+
+        const frienderId = sessionUser.id;
+        const friendeeId = user.id
+
+        return dispatch(createFriendThunk({frienderId: frienderId, friendeeId: friendeeId}))
+    }
+
     return (
         <div className='background'>
             <div className='upperbackGround'>
                 <div className='coverPhotoContainer'>
                     <div className='coverPhoto'>
-                        <img src="https://facebook85-seeds.s3.amazonaws.com/pexels-leah-kelley-3935703.jpg" alt="coverPhoto" className='actualCoverPhoto'></img>
+                        <img src={user.coverPhoto} alt="coverPhoto" className='actualCoverPhoto'></img>
                     </div>
                 </div>
                 <div className='belowCoverPhoto'>
                     <div className='belowCoverPhotoLeft'>
                         <div className='profilePictureContainer'>
-                            <img src="https://facebook85-seeds.s3.amazonaws.com/blank-head-profile-pic-for-a-man.jpg" alt="profilePicture" className='profilePicture'></img>
+                            <img src={user.profileImage} alt="profilePicture" className='profilePicture'></img>
                         </div>
                         <div className='profileName'>
                             <h1>{`${user.firstName} ${user.lastName}`}</h1>
                         </div>
+                    </div>
+                    <div className='friendButtonContainer'>
+                        {sessionUser.id in friends ? <button onClick={handleUnFriend} className='friendButton'>Unfriend</button> : <button onClick={handleFriend} className='friendButton'>Friend</button>}
                     </div>
                     <div className='belowCoverPhotoRight'>
                         
@@ -77,22 +108,22 @@ function UserProfile () {
             <div className='lowerbackGround'>
                 <div className='leftColumn'>
                     <div className='friendsContainer'>
+                        <h3>Friends</h3>
                         <div className='friendsThumbnails'>
-                            <h3>Friends</h3>
-                            <h1>Friends Thumbnail Holder</h1>
+                            <FriendsIndex />
                         </div>
                     </div>
                 </div>
                 <div className='rightColumn'>
                     <div className='postContainer'>
-                        <img src={sessionUser.profileImage} alt="userProfilePic" className='commentIcon' /> 
+                        <img src={user.profileImage} alt="userProfilePic" className='commentIcon' /> 
                         <form onSubmit={handlePost} className='postForm'>
                             <input 
                                 type="text"
                                 onChange={(e) => body = e.target.value}
                                 placeholder={sessionUser.id === user.id ? 
                                     `What's on your mind?`:
-                                    `Write something to ${user.firstName}`} 
+                                    `Write something to ${user.firstName}...`} 
                                 className='postText'
                             />
                             <button
