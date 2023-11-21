@@ -1,9 +1,15 @@
 import csrfFetch from "./csrf";
 
 const GET_ONE_USER = "GET_ONE_USER";
+const FETCH_POSTS = "post/FETCH_POSTS"
 const CREATE_POST = "post/CREATE_POST";
 const REMOVE_POST = "post/REMOVE_POST";
 const EDIT_POST = "post/EDIT_POST";
+
+export const fetchAllPosts = posts => ({
+    type: FETCH_POSTS,
+    payload: posts
+})
 
 export const createPost = post => ({
     type: CREATE_POST,
@@ -40,6 +46,17 @@ export const createPostThunk = (post) => async dispatch => {
         const post = await response.json()
         debugger
         dispatch(createPost(post))
+    }
+}
+
+export const fetchAllPostsThunk = (userId) => async dispatch => {
+    const response = await csrfFetch("/api/posts", {
+        method: "GET"
+    })
+
+    if (response.ok) {
+        const posts = await response.json()
+        dispatch(fetchAllPosts(posts))
     }
 }
 
@@ -84,6 +101,9 @@ const postReducer = (state = {}, action) => {
             // newState[action.payload.user.id] = action.payload
             const nextState = { ...newState, ...action.payload.posts }
             return nextState
+        case FETCH_POSTS:
+            const allPosts = { ...newState, ...action.payload }
+            return allPosts
         case CREATE_POST:
             const withPost = { ...newState, ...action.payload }
             return withPost

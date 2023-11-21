@@ -68,4 +68,13 @@
     top: 10px;
     right: 10px;
     cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.editPostButton {
+    background-color: #1877f2;
+    color: white;
+    border: 1px solid lightgray;
+    border-radius: 20px;
 }

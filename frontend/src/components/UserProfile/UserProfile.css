@@ -166,3 +166,11 @@
 .belowCoverPhoto h1 {
     height: 40px;
 }
+
+.friendButton {
+    margin-top: 50%;
+    background-color: gray;
+    color: white;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+}

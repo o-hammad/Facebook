@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
-import './Navigation.css'
+import './Navigation.css';
+import { Link } from "react-router-dom";
 
 function ProfileButton({ user }) {
     const dispatch = useDispatch();
@@ -38,7 +39,7 @@ function ProfileButton({ user }) {
                 <ul className="profile-dropdown">
                     <li>
                         <div className="miniProfile">
-                            <li>{user.firstName} {user.lastName}</li>
+                            <Link to={`/users/${user.id}`}>{user.firstName} {user.lastName}</Link>
                         </div>
                     </li>
                     <li>

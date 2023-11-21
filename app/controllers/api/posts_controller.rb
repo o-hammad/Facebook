@@ -1,4 +1,18 @@
 class Api::PostsController < ApplicationController
+    def index
+        # @user = User.find_by(id: params[:user_id])
+
+        # rcvd_posts = @user.rcvd_posts
+        # sent_posts = @user.sent_posts
+
+        # @posts = rcvd_posts.concat(sent_posts)
+
+        @user = current_user
+        # debugger
+        render :index
+    end
+    
+    
     def create
         @post = Post.new(post_params)
 
