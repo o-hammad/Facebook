@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import LoginForm from './components/LoginForm/index';
 import Navigation from './components/Navigation';
 import UserProfile from './components/UserProfile';
+import NewsFeed from './components/NewsFeed';
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
       </Route>
       <Route path="/">
         <Navigation />
+        <NewsFeed />
       </Route>
     </Switch>
   )

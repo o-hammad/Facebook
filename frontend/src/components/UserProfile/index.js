@@ -8,6 +8,7 @@ import PostsIndex from '../PostsIndex';
 import FriendsIndex from '../FriendsIndex';
 import { createFriendThunk } from '../../store/friend';
 import { deleteFriendThunk } from '../../store/friend';
+import { useState } from 'react';
 
 
 function UserProfile () {
@@ -16,7 +17,7 @@ function UserProfile () {
     const user = useSelector(state => state.users[userId]);
     const sessionUser = useSelector(state => state.session.user);
     const friends = useSelector(state => state.friends);
-    let body;
+    const [body, setBody] = useState("");
     
     useEffect(() => {
         dispatch(userProfileView(userId))
@@ -34,14 +35,12 @@ function UserProfile () {
         
         const posterId = sessionUser.id;
         const posteeId = user.id;
-        
-        const inputField = document.getElementsByClassName("postText")
 
         debugger
         if (sessionUser.id === user.id) {
-            inputField.value = `What's on your mind?`
+            setBody(`What's on your mind?`)
         } else {
-            inputField.value = `Write something to ${user.firstName}`
+            setBody(`Write something to ${user.firstName}...`)
         }
         debugger
 
@@ -93,7 +92,7 @@ function UserProfile () {
                         </div>
                     </div>
                     <div className='friendButtonContainer'>
-                        {sessionUser.id in friends ? <button onClick={handleUnFriend} className='friendButton'>Unfriend</button> : <button onClick={handleFriend} className='friendButton'>Friend</button>}
+                        {sessionUser.id in friends && user.id !== sessionUser.id ? <button onClick={handleUnFriend} className='friendButton'>Unfriend</button> : <button onClick={handleFriend} className='friendButton'>Friend</button>}
                     </div>
                     <div className='belowCoverPhotoRight'>
                         
@@ -120,11 +119,12 @@ function UserProfile () {
                         <form onSubmit={handlePost} className='postForm'>
                             <input 
                                 type="text"
-                                onChange={(e) => body = e.target.value}
+                                onChange={(e) => setBody(e.target.value)}
                                 placeholder={sessionUser.id === user.id ? 
                                     `What's on your mind?`:
                                     `Write something to ${user.firstName}...`} 
                                 className='postText'
+                                value = {body}
                             />
                             <button
                                 type = "submit"
