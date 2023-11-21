@@ -6,13 +6,12 @@ import UserProfile from './components/UserProfile';
 import NewsFeed from './components/NewsFeed';
 import { useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { Redirect } from 'react-router-dom';
 
 
 function App() {
-  // const history = useHistory();
+  const history = useHistory();
   const sessionUser = useSelector(state => state.session.user);
-  // if (!sessionUser) history.push('/login');
+  if (!sessionUser) history.push('/login');
 
   
 

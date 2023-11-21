@@ -27,7 +27,7 @@ function UserProfile () {
         dispatch(userProfileView(userId))
     }, [dispatch, userId])
     
-    if (!sessionUser) return <Redirect to="/login" />;
+    // if (!sessionUser) return <Redirect to="/login" />;
     
     if (!user) {
         return null;
