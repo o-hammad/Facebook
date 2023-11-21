@@ -99,11 +99,15 @@ const postReducer = (state = {}, action) => {
     switch (action.type) {
         case GET_ONE_USER:
             // newState[action.payload.user.id] = action.payload
-            const nextState = { ...newState, ...action.payload.posts }
-            return nextState
+            // const nextState = { ...newState, ...action.payload.posts }
+            if (action.payload.posts) {
+                return action.payload.posts;
+            } else {
+                return {}
+            }
         case FETCH_POSTS:
-            const allPosts = { ...newState, ...action.payload }
-            return allPosts
+            // const allPosts = { ...newState, ...action.payload }
+            return action.payload
         case CREATE_POST:
             const withPost = { ...newState, ...action.payload }
             return withPost

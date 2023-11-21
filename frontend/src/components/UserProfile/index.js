@@ -9,6 +9,7 @@ import FriendsIndex from '../FriendsIndex';
 import { createFriendThunk } from '../../store/friend';
 import { deleteFriendThunk } from '../../store/friend';
 import { useState } from 'react';
+import { Redirect } from 'react-router-dom';
 
 
 function UserProfile () {
@@ -19,10 +20,14 @@ function UserProfile () {
     const friends = useSelector(state => state.friends);
     const [body, setBody] = useState("");
     
+    
+    debugger
+    
     useEffect(() => {
         dispatch(userProfileView(userId))
     }, [dispatch, userId])
-
+    
+    if (!sessionUser) return <Redirect to="/login" />;
     
     if (!user) {
         return null;
@@ -92,7 +97,7 @@ function UserProfile () {
                         </div>
                     </div>
                     <div className='friendButtonContainer'>
-                        {sessionUser.id in friends && user.id !== sessionUser.id ? <button onClick={handleUnFriend} className='friendButton'>Unfriend</button> : <button onClick={handleFriend} className='friendButton'>Friend</button>}
+                        {sessionUser.id in friends ? <button onClick={handleUnFriend} className='friendButton'>Unfriend</button> : <button onClick={handleFriend} className='friendButton'>Friend</button>}
                     </div>
                     <div className='belowCoverPhotoRight'>
                         
@@ -132,6 +137,9 @@ function UserProfile () {
                                 >Post
                             </button>
                         </form>
+                    </div>
+                    <div className='postsHeader'>
+                        <h3>Posts</h3>
                     </div>
                     <div className='postsContainer'>
                         <PostsIndex />

@@ -1,0 +1,20 @@
+.newsFeed {
+    margin-top: 50px;
+    width: 100vw;
+    display: flex;
+    background-color: #f0f2f5;
+}
+
+.leftSide {
+    width: 33%;
+    background-color: #f0f2f5;
+}
+
+.postsIndex {
+    width: 33%;
+}
+
+.rightSIde {
+    width: 33%;
+    background-color: #f0f2f5;
+}
