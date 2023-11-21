@@ -112,27 +112,37 @@
 }
 
 .commentIcon {
-    width: 50px;
+    height: 40px;
     border-radius: 100%;
 }
 
 .postContainer {
     display: flex;
     margin-top: 2%;
+    background-color: white;
+    border-radius: 8px;
+    height: 100px;
+    align-items: center;
+    width: 100%;
 }
 
 .postText {
-    width: 75%;
+    width: 70%;
+    height: 40px;
     border-radius: 20px;
     border: 1px solid lightgray;
+    background-color: #f0f2f5;
+    margin-left: 5px;
 }
 
 .postButton {
     width: 25%;
+    height: 40px;
     border-radius: 20px;
     background-color: #1877f2;
     color: white;
     border: 1px solid lightgray;
+    margin-left: 5px;
 }
 
 .postForm {
@@ -159,7 +169,7 @@
 }
 
 .innerLine {
-    width: 80%;
+    width: 70%;
     border-top: 1px solid lightgray;
 }
 
@@ -168,9 +178,27 @@
 }
 
 .friendButton {
-    margin-top: 50%;
-    background-color: gray;
-    color: white;
+    margin-top: 20px;
+    background-color: lightgray;
+    color: black;
+    font-weight: bold;
     border: 1px solid lightgray;
     border-radius: 5px;
+    width: 150px;
+    height: 40px;
+}
+
+.postsHeader {
+    margin-top: 5%;
+    width: 100%;
+    height: 60px;
+    background-color: white;
+    border-radius: 8px;
+    border: 4%;
+    display: flex;
+    align-items: center;
+}
+
+.postsHeader h3 {
+    margin-left: 3%;
 }
