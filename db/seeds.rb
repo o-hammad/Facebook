@@ -48,4 +48,272 @@ end
     }) 
   end
 
+  Post.create!({
+    poster_id: 1, 
+    postee_id: 2,
+    body: "Welcome to Facebook!"
+  })
+
+  Post.create!({
+    poster_id: 1, 
+    postee_id: 3,
+    body: "Welcome to Facebook!"
+  })
+
+  Post.create!({
+    poster_id: 1, 
+    postee_id: 4,
+    body: "Welcome to Facebook!"
+  })
+
+  Post.create!({
+    poster_id: 1, 
+    postee_id: 5,
+    body: "Welcome to Facebook!"
+  })
+
+  Post.create!({
+    poster_id: 1, 
+    postee_id: 6,
+    body: "Welcome to Facebook!"
+  })
+
+  Post.create!({
+    poster_id: 1, 
+    postee_id: 7,
+    body: "Welcome to Facebook!"
+  })
+
+  Post.create!({
+    poster_id: 1, 
+    postee_id: 8,
+    body: "Welcome to Facebook!"
+  })
+
+  Post.create!({
+    poster_id: 1, 
+    postee_id: 9,
+    body: "Welcome to Facebook!"
+  })
+
+  Friend.create!({
+    friender_id: 1, 
+    friendee_id: 2,
+  })
+
+  Friend.create!({
+    friender_id: 1, 
+    friendee_id: 3,
+  })
+
+  Friend.create!({
+    friender_id: 1, 
+    friendee_id: 4,
+  })
+
+  Friend.create!({
+    friender_id: 1, 
+    friendee_id: 5,
+  })
+
+  Friend.create!({
+    friender_id: 1, 
+    friendee_id: 6
+  })
+
+  Friend.create!({
+    friender_id: 1, 
+    friendee_id: 7
+  })
+
+  Friend.create!({
+    friender_id: 1, 
+    friendee_id: 8
+  })
+
+  Friend.create!({
+    friender_id: 1, 
+    friendee_id: 9
+  })
+
+  Friend.create!({
+    friender_id: 1, 
+    friendee_id: 10
+  })
+
+  Friend.create!({
+    friender_id: 2, 
+    friendee_id: 3
+  })
+
+  Friend.create!({
+    friender_id: 2, 
+    friendee_id: 4
+  })
+
+  Friend.create!({
+    friender_id: 2, 
+    friendee_id: 5
+  })
+
+  Friend.create!({
+    friender_id: 2, 
+    friendee_id: 6
+  })
+
+  Friend.create!({
+    friender_id: 2, 
+    friendee_id: 7
+  })
+
+  Friend.create!({
+    friender_id: 2, 
+    friendee_id: 8
+  })
+
+  Friend.create!({
+    friender_id: 2, 
+    friendee_id: 9
+  })
+
+  Friend.create!({
+    friender_id: 2, 
+    friendee_id: 10
+  })
+
+  Friend.create!({
+    friender_id: 3, 
+    friendee_id: 4
+  })
+
+  Friend.create!({
+    friender_id: 3, 
+    friendee_id: 5
+  })
+
+  Friend.create!({
+    friender_id: 3, 
+    friendee_id: 6
+  })
+
+  Friend.create!({
+    friender_id: 3, 
+    friendee_id: 7
+  })
+
+  Friend.create!({
+    friender_id: 3, 
+    friendee_id: 8
+  })
+
+  Friend.create!({
+    friender_id: 3, 
+    friendee_id: 9
+  })
+
+  Friend.create!({
+    friender_id: 3, 
+    friendee_id: 10
+  })
+
+  Friend.create!({
+    friender_id: 4, 
+    friendee_id: 5
+  })
+
+  Friend.create!({
+    friender_id: 4, 
+    friendee_id: 6
+  })
+
+  Friend.create!({
+    friender_id: 4, 
+    friendee_id: 7
+  })
+
+  Friend.create!({
+    friender_id: 4, 
+    friendee_id: 8
+  })
+
+  Friend.create!({
+    friender_id: 4, 
+    friendee_id: 9
+  })
+
+  Friend.create!({
+    friender_id: 4,
+    friendee_id: 10
+  })
+
+  Friend.create!({
+    friender_id: 5, 
+    friendee_id: 6
+  })
+
+  Friend.create!({
+    friender_id: 5, 
+    friendee_id: 7
+  })
+
+  Friend.create!({
+    friender_id: 5, 
+    friendee_id: 8
+  })
+
+  Friend.create!({
+    friender_id: 5, 
+    friendee_id: 9
+  })
+
+  Friend.create!({
+    friender_id: 5, 
+    friendee_id: 10
+  })
+
+  Friend.create!({
+    friender_id: 6, 
+    friendee_id: 7
+  })
+
+  Friend.create!({
+    friender_id: 6, 
+    friendee_id: 8
+  })
+
+  Friend.create!({
+    friender_id: 6, 
+    friendee_id: 9
+  })
+
+  Friend.create!({
+    friender_id: 6,
+    friendee_id: 10
+  })
+
+  Friend.create!({
+    friender_id: 7, 
+    friendee_id: 8
+  })
+
+  Friend.create!({
+    friender_id: 7, 
+    friendee_id: 9
+  })
+
+  Friend.create!({
+    friender_id: 7, 
+    friendee_id: 10
+  })
+
+  Friend.create!({
+    friender_id: 8, 
+    friendee_id: 9
+  })
+
+  Friend.create!({
+    friender_id: 8, 
+    friendee_id: 10
+  })
+
   puts "Done!"
