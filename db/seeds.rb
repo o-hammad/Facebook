@@ -143,6 +143,11 @@ end
 
   Friend.create!({
     friender_id: 2, 
+    friendee_id: 1
+  })
+
+  Friend.create!({
+    friender_id: 2, 
     friendee_id: 3
   })
 
@@ -183,6 +188,16 @@ end
 
   Friend.create!({
     friender_id: 3, 
+    friendee_id: 1
+  })
+
+  Friend.create!({
+    friender_id: 3, 
+    friendee_id: 2
+  })
+
+  Friend.create!({
+    friender_id: 3, 
     friendee_id: 4
   })
 
@@ -214,6 +229,21 @@ end
   Friend.create!({
     friender_id: 3, 
     friendee_id: 10
+  })
+
+  Friend.create!({
+    friender_id: 4, 
+    friendee_id: 1
+  })
+
+  Friend.create!({
+    friender_id: 4, 
+    friendee_id: 2
+  })
+
+  Friend.create!({
+    friender_id: 4, 
+    friendee_id: 3
   })
 
   Friend.create!({
@@ -253,6 +283,21 @@ end
 
   Friend.create!({
     friender_id: 5, 
+    friendee_id: 2
+  })
+
+  Friend.create!({
+    friender_id: 5, 
+    friendee_id: 3
+  })
+
+  Friend.create!({
+    friender_id: 5, 
+    friendee_id: 4
+  })
+
+  Friend.create!({
+    friender_id: 5, 
     friendee_id: 6
   })
 
@@ -278,6 +323,31 @@ end
 
   Friend.create!({
     friender_id: 6, 
+    friendee_id: 1
+  })
+
+  Friend.create!({
+    friender_id: 6, 
+    friendee_id: 2
+  })
+
+  Friend.create!({
+    friender_id: 6, 
+    friendee_id: 3
+  })
+
+  Friend.create!({
+    friender_id: 6, 
+    friendee_id: 4
+  })
+
+  Friend.create!({
+    friender_id: 6, 
+    friendee_id: 5
+  })
+
+  Friend.create!({
+    friender_id: 6, 
     friendee_id: 7
   })
 
@@ -298,6 +368,37 @@ end
 
   Friend.create!({
     friender_id: 7, 
+    friendee_id: 1
+  })
+
+  Friend.create!({
+    friender_id: 7, 
+    friendee_id: 2
+  })
+
+  Friend.create!({
+    friender_id: 7, 
+    friendee_id: 3
+  })
+
+  Friend.create!({
+    friender_id: 7, 
+    friendee_id: 4
+  })
+
+  Friend.create!({
+    friender_id: 7, 
+    friendee_id: 5
+  })
+
+  Friend.create!({
+    friender_id: 7, 
+    friendee_id: 6
+  })
+
+
+  Friend.create!({
+    friender_id: 7, 
     friendee_id: 8
   })
 
@@ -309,6 +410,41 @@ end
   Friend.create!({
     friender_id: 7, 
     friendee_id: 10
+  })
+
+  Friend.create!({
+    friender_id: 8, 
+    friendee_id: 1
+  })
+
+  Friend.create!({
+    friender_id: 8, 
+    friendee_id: 2
+  })
+
+  Friend.create!({
+    friender_id: 8, 
+    friendee_id: 3
+  })
+
+  Friend.create!({
+    friender_id: 8, 
+    friendee_id: 4
+  })
+
+  Friend.create!({
+    friender_id: 8, 
+    friendee_id: 5
+  })
+
+  Friend.create!({
+    friender_id: 8, 
+    friendee_id: 6
+  })
+
+  Friend.create!({
+    friender_id: 8, 
+    friendee_id: 7
   })
 
   Friend.create!({
