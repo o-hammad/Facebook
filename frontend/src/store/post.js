@@ -115,9 +115,7 @@ const postReducer = (state = {}, action) => {
             delete newState[action.postId];
             return newState;
         case EDIT_POST:
-            debugger
             const updatedPost = { ...newState, ...action.post }
-            debugger
             return updatedPost;
         default:
             return state;

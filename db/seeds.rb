@@ -247,6 +247,11 @@ end
   })
 
   Friend.create!({
+    friender_id: 5,
+    friendee_id: 1,
+  })
+
+  Friend.create!({
     friender_id: 5, 
     friendee_id: 6
   })

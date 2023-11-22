@@ -21,8 +21,6 @@ function UserProfile () {
     const [body, setBody] = useState("");
     
     
-    debugger
-    
     useEffect(() => {
         dispatch(userProfileView(userId))
     }, [dispatch, userId])
@@ -34,20 +32,16 @@ function UserProfile () {
     }
 
     const handlePost = (e) => {
-        debugger
-        
         e.preventDefault();
         
         const posterId = sessionUser.id;
         const posteeId = user.id;
 
-        debugger
         if (sessionUser.id === user.id) {
             setBody(`What's on your mind?`)
         } else {
             setBody(`Write something to ${user.firstName}...`)
         }
-        debugger
 
         return dispatch(createPostThunk({ posterId, posteeId, body }))
             // .catch(async (res) => {
