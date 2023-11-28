@@ -98,6 +98,7 @@ function LoginForm() {
                 </div>
             </div>
             <div className='lowerBackGround'>
+                <a href="https://www.linkedin.com/in/omar-hammad-93810413b/" target="_blank"><img src="../../assets/images/linkedinicon.png"></img></a>
             </div>
         </div>
     );

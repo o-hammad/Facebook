@@ -14,7 +14,6 @@ json.friends do
 end
 
 user_posts = @user.rcvd_posts.includes(:poster, :postee)
-# user_post_ids = @user.rcvd_posts.order('created_at DESC').pluck(:id)
 
 json.posts do
   user_posts.each do |post|
@@ -24,5 +23,4 @@ json.posts do
       json.postee post.postee
     end
   end
-  # json.post_ids user_post_ids
 end
