@@ -5,6 +5,7 @@
 .background1 {
     display: flex;
     justify-content: center;
+    flex-direction: column;
     height: 100vh;
     width: 100vw;
 }
@@ -15,6 +16,11 @@
     width: 100vw;
     height: 72vh;
     background-color: #f0f2f5;
+}
+
+.lowerBackground {
+    display: flex;
+    justify-content: center;
 }
 
 .leftInnerBox {
@@ -132,4 +138,12 @@
     font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 22px;
+}
+
+.linkedInIcon {
+    height: 25px;
+}
+
+.gitHubIcon {
+    height: 25px;
 }

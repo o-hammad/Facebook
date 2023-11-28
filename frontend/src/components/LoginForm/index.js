@@ -4,6 +4,8 @@ import * as sessionActions from '../../store/session';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import SignupForm from '../SignupForm/index';
+import LinkedIn from "../../assets/images/linkedinicon.png";
+import gitHub from "../../assets/images/github-logo.png";
 
 function LoginForm() {
     const dispatch = useDispatch();
@@ -98,10 +100,14 @@ function LoginForm() {
                 </div>
             </div>
             <div className='lowerBackGround'>
-                <a href="https://www.linkedin.com/in/omar-hammad-93810413b/" target="_blank"><img src="../../assets/images/linkedinicon.png"></img></a>
+                <a href="https://www.linkedin.com/in/omar-hammad-93810413b/" target="_blank"><img src={LinkedIn} className='linkedInIcon'></img></a>
+                <a href="https://github.com/o-hammad/Facebook.git" target="_blank"><img src={gitHub} className='gitHubIcon'></img></a>
             </div>
         </div>
     );
 }
 
 export default LoginForm;
+
+{/* 
+ */}
