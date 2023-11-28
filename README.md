@@ -29,13 +29,21 @@
 
 ![Alt text](frontend/src/assets/images/users_show.png)
 
-<p>The above fetch did not work when I was displaying the show page since I also needed sent posts.  In order to overcome this</p>
+<p>The above fetch did not work when I was displaying the News Feed since I also needed sent posts.  In order to overcome this, I created a Posts Index json.jbuilder in order to fetch both sent and received posts which using the reduced would start with a fresh slice of state.  Below is a code snipping of the Post's Index json.jbuilder</p>
 
+![Alt text](frontend/src/assets/images/posts_index.png)
 
 <h3>Friending</h3>
 
+<p>Perhpas one of the biggest challenges faced was creating the friends table on the backend.  Since it didn't matter who in the realtionship was the friender - the person who initiated the friendship - and the friendee - the person who received the friendship request, I needed to create table entries both "forwards" and "backwards" when a friendship was created in the controller - see below code snippet.</p>
 
+![Alt text](frontend/src/assets/images/friends_create.png)
 
-Delve deep into ~2 features that show off your technical abilities. Discuss both the challenges faced and your brilliant solutions.
+<p>This meant that when a friendship was deleted, which happens when one user "unfriends" another, not one but both of those entries needed to be deleted.  Please see the below snipping of the delete action in the friends controller.</p>
 
-Code snippets to highlight your best code (markdown code snippets, NOT screenshots)
+![Alt text](frontend/src/assets/images/friends_delete.png)
+
+<p>Finally, as mentioned above, in order minimize the amount of requests to the backend, I needed a custom query in order to find all of the friends of the User whose show page was being displayed.  To accomplish this, I created said custom query in the Users model which would find all of the friends associated with the User Id from the params of the User being displayed on the page.  Please see the below code snippet of that custom query using active record.</p>
+
+![Alt text](frontend/src/assets/images/friends_assoc.png)
+
