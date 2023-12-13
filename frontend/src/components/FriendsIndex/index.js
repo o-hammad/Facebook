@@ -2,15 +2,23 @@ import { useSelector } from "react-redux";
 import FriendItem from "../FriendItem";
 import "./FriendsIndex.css"
 
-function FriendsIndex () {
-    const friends = useSelector(state => state.friends)
-    const friendships = Object.values(friends)
+function FriendsIndex (props) {
+    // const sessionUser = useSelector(state => state.users)
+    // const friends = useSelector(state => state.friends)
+    const users = useSelector(state => state.users)
 
-    debugger
+    // const friendships = Object.values(friends)
+    let friendsList = []
+    
+    props.friends.forEach((friendship) => {
+        if (friendship.friendeeId === props.userId) {
+            friendsList.push(users[friendship.frienderId])
+        }
+    })
+
     return (
         <div className="friendshipsContainer">
-            {friendships.map((friendListItem) => {
-                debugger
+            {friendsList.map((friendListItem) => {
                 return <FriendItem friend={friendListItem}/>
             })}
         </div>

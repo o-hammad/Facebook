@@ -6,6 +6,7 @@ import { Redirect } from 'react-router-dom';
 import SignupForm from '../SignupForm/index';
 import LinkedIn from "../../assets/images/linkedinicon.png";
 import gitHub from "../../assets/images/github-logo.png";
+import Facemash from "../../assets/images/logo - facemash.png"
 
 function LoginForm() {
     const dispatch = useDispatch();
@@ -15,7 +16,7 @@ function LoginForm() {
     const [errors, setErrors] = useState([]);
     const [showModal, setShowModal] = useState(false);
 
-    if (sessionUser) return <Redirect to="/" />;
+    if (sessionUser) return <Redirect to="/newsfeed" />;
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -55,9 +56,10 @@ function LoginForm() {
 
     return (
         <div className='background1'>
-            <div className='upperBackground'>
+            <div className='upperBackground3'>
                 <div className='leftInnerBox'>
-                    <img className="fbLogo" src="https://static.xx.fbcdn.net/rsrc.php/y1/r/4lCu2zih0ca.svg" alt="Facebook"></img>
+                    <img className="fbLogo" src={Facemash} alt="Facebook"></img>
+                    <h2>Connect with friends and the world around you on Facemash.</h2>
                 </div>
                 <div className='rightInnerBox'>
                     <div className='loginBox'>

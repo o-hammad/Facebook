@@ -17,8 +17,8 @@
    top: 50%;
    left: 50%;
    transform: translate(-50%, -50%);
-   width: 26em;
-   height: 30em;
+   width: 32%;
+   height: auto;
    border: 1px solid #ccc;
    z-index: 100;
    background-color: white;
@@ -147,7 +147,7 @@
     border-radius: 5px;
     height: 30px;
     color: black;
-    width: 202px;
+    width: 55%;
     margin-right: 10%;
     display: flex;
     align-items: center;

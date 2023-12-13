@@ -2,9 +2,9 @@
 
 const GET_ONE_USER = "GET_ONE_USER";
 
-const getOneUser = user => ({
+const getOneUser = users => ({
     type: GET_ONE_USER,
-    payload: user
+    payload: users
 });
 
 export const userProfileView = (id) => async dispatch => {
@@ -24,7 +24,7 @@ const userReducer = (state = {}, action) => {
             // newState[action.payload.user.id] = action.payload
             // const nextState = {...newState, ...action.payload.user}
             // return nextState
-            return action.payload.user
+            return action.payload.users
         default:
             return state;
     }

@@ -29,7 +29,6 @@ function PostsIndex () {
     return (
         <div className="postsContainer">
             {sortedPosts.map((postInfo) => {
-                debugger
                 return <PostItem post={postInfo} />
             })}
         </div>

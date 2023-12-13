@@ -10,17 +10,27 @@ import { createFriendThunk } from '../../store/friend';
 import { deleteFriendThunk } from '../../store/friend';
 import { useState } from 'react';
 import { Redirect } from 'react-router-dom';
+import Navigation from '../Navigation';
 
 
 function UserProfile () {
     const { userId } = useParams();
     const dispatch = useDispatch();
-    const user = useSelector(state => state.users[userId]);
+    const user = useSelector(state => state.users[parseInt(userId)]);
     const sessionUser = useSelector(state => state.session.user);
     const friends = useSelector(state => state.friends);
+    const friendships = Object.values(friends);
     const [body, setBody] = useState("");
+    let currentFriends = false;
     
-    
+    debugger
+
+    friendships.forEach((friendship) => {
+        if (friendship.frienderId === sessionUser.id && friendship.friendeeId === parseInt(userId) ) {
+            currentFriends = true;
+        }
+    })
+
     useEffect(() => {
         dispatch(userProfileView(userId))
     }, [dispatch, userId])
@@ -60,21 +70,22 @@ function UserProfile () {
 
     const handleUnFriend = (e) => {
         e.preventDefault();
-
-        return(dispatch(deleteFriendThunk(user.id, sessionUser.id)))
+        
+        return(dispatch(deleteFriendThunk(parseInt(userId), sessionUser.id)));
     }
 
     const handleFriend = (e) => {
         e.preventDefault();
 
         const frienderId = sessionUser.id;
-        const friendeeId = user.id
+        const friendeeId = parseInt(userId);
 
         return dispatch(createFriendThunk({frienderId: frienderId, friendeeId: friendeeId}))
     }
 
     return (
         <div className='background'>
+            <Navigation />
             <div className='upperbackGround'>
                 <div className='coverPhotoContainer'>
                     <div className='coverPhoto'>
@@ -91,7 +102,15 @@ function UserProfile () {
                         </div>
                     </div>
                     <div className='friendButtonContainer'>
-                        {sessionUser.id in friends ? <button onClick={handleUnFriend} className='friendButton'>Unfriend</button> : <button onClick={handleFriend} className='friendButton'>Friend</button>}
+                        {/* {sessionUser.id !== user.id ? 
+                            sessionUser.id in friends ? <button onClick={handleUnFriend} className='friendButton'>Unfriend</button> : 
+                            <button onClick={handleFriend} className='friendButton'>Friend</button> : 
+                            " "} */}
+                        {sessionUser.id !== parseInt(userId) ? 
+                            currentFriends ?
+                            <button onClick={handleUnFriend} className='friendButton'>Unfriend</button> :
+                            <button onClick={handleFriend} className='friendButton'>Friend</button> : 
+                            " " }
                     </div>
                     <div className='belowCoverPhotoRight'>
                         
@@ -108,7 +127,7 @@ function UserProfile () {
                     <div className='friendsContainer'>
                         <h3>Friends</h3>
                         <div className='friendsThumbnails'>
-                            <FriendsIndex />
+                            <FriendsIndex friends={friendships} userId={parseInt(userId)} />
                         </div>
                     </div>
                 </div>

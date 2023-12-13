@@ -4,40 +4,47 @@
 
 .background1 {
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     flex-direction: column;
     height: 100vh;
     width: 100vw;
 }
 
-.upperBackground {
+.upperBackground3 {
     display: flex;
     justify-content: center;
     width: 100vw;
-    height: 72vh;
+    height: 120vh;
     background-color: #f0f2f5;
 }
 
 .lowerBackground {
     display: flex;
     justify-content: center;
+    height: 500px;
 }
 
 .leftInnerBox {
     display: flex;
-    width: 300px;
-    padding-right: 48px;
+    flex-direction: column;
+    width: 35%;
+    margin-right: 2%;
+    margin-left: 5%;
+}
+
+.leftInnerBox h2 {
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .rightInnerBox {
     display: flex;
     justify-content: center;
-    margin-top: 5%;
+    margin-top: 2%;
     width: 40%;
 }
 
 .loginBox {
-    height: 390px;
+    height: auto;
     width: 400px;
     border-radius: 8px;
     box-sizing: border-box;
@@ -45,11 +52,13 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
     padding: 2%;
     display: inline;
+    margin: auto;
 }
 
 .fbLogo {
-    height: 300px;
-    width: 300px;
+    height: 60px;
+    width: 60%;
+    margin-top: 45%;
 }
 
 .emailBox .emailField {

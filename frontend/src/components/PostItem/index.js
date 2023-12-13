@@ -23,8 +23,6 @@ function PostItem (post) {
     const handleEdit = (e) => {
         e.preventDefault();
 
-        debugger
-
         closeModal();
 
         const data = {
@@ -32,8 +30,6 @@ function PostItem (post) {
             posteeId: post.post.posteeId,
             body: body
         }
-
-        debugger
 
         return dispatch(editPostThunk(post.post.id, data))        
     }
@@ -44,9 +40,6 @@ function PostItem (post) {
         return dispatch(deletePostThunk(post.post.id))
     }
 
-
-
-    debugger
     return (
         <div className="postItemContainer">
             <div className="upperHalf">

@@ -27,7 +27,12 @@ class User < ApplicationRecord
     inverse_of: :postee,
     dependent: :destroy
 
-  def friends
+  has_many :friends,
+    primary_key: :id,
+    foreign_key: :friendee_id,
+    class_name: :Friend
+
+  def friendships
     friend_ids = Friend.where(friender_id: self.id).pluck(:friendee_id)
 
     friendships = []

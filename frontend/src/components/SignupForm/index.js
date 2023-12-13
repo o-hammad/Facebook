@@ -32,10 +32,13 @@ function SignupForm({setShowModal}) {
             const birthDayString = birthDay.toString().padStart(2,0);
             const birthYearString = birthYear.toString();
             const birthMonthString = birthMonth;
+            const profileImage = "https://facebook85-seeds.s3.amazonaws.com/blank-head-profile-pic-for-a-man.jpg"
+            const coverPhoto = "https://facebook85-seeds.s3.amazonaws.com/pexels-leah-kelley-3935703.jpg"
+
 
             const fullBirthday = `${birthYearString}-${birthMonthString}-${birthDayString}`
 
-            return dispatch(sessionActions.signup({ email, password, firstName, lastName, fullBirthday, gender }))
+            return dispatch(sessionActions.signup({ email, password, firstName, lastName, fullBirthday, gender, profileImage, coverPhoto }))
                 .catch(async (res) => {
                     let data;
                     try {

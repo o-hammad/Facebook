@@ -6,7 +6,7 @@ class Api::UsersController < ApplicationController
 
     if @user.save
       login!(@user)
-      render :show
+      render "api/sessions/show"
     else
       render json: { errors: @user.errors.full_messages }, status: :unprocessable_entity
     end
@@ -21,7 +21,7 @@ class Api::UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:email, :password, :first_name, :last_name, :birthday, :gender)
+    params.require(:user).permit(:email, :password, :first_name, :last_name, :birthday, :gender, :profile_image, :cover_photo)
   end
 end
     

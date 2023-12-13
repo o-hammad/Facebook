@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchAllPostsThunk } from "../../store/post";
 import PostsIndex from "../PostsIndex";
 import "./NewsFeed.css"
+import Navigation from "../Navigation";
 // import { Redirect } from "react-router-dom";
 
 
@@ -19,6 +20,7 @@ function NewsFeed () {
     
     return (
         <div className="newsFeed">
+            <Navigation />
             <div className="leftSide">
 
             </div>
