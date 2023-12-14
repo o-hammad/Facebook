@@ -5,6 +5,7 @@ import PostsIndex from "../PostsIndex";
 import "./NewsFeed.css"
 import Navigation from "../Navigation";
 import { userProfileView } from '../../store/user';
+import FriendsList from "../FriendsList";
 
 // import { Redirect } from "react-router-dom";
 
@@ -27,9 +28,12 @@ function NewsFeed () {
         <div className="newsFeed">
             <Navigation />
             <div className="leftSide">
-
+                <FriendsList />
             </div>
             <div className="postsIndex">
+                <div className="postsHeader">
+                    <h3>Wall Posts</h3>
+                </div>
                 <PostsIndex />
             </div>
             <div className="rightSide">

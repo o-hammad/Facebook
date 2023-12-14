@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom";
 
-
-
 function FriendItem (friend) {
     return (
         <div className="friendContainer">

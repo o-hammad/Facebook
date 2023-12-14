@@ -9,9 +9,7 @@ import FriendsIndex from '../FriendsIndex';
 import { createFriendThunk } from '../../store/friend';
 import { deleteFriendThunk } from '../../store/friend';
 import { useState } from 'react';
-import { Redirect } from 'react-router-dom';
 import Navigation from '../Navigation';
-import FriendsImage from "../../assets/images/FriendsImage.png"
 
 function UserProfile () {
     const { userId } = useParams();
@@ -22,8 +20,6 @@ function UserProfile () {
     const friendships = Object.values(friends);
     const [body, setBody] = useState("");
     let currentFriends = false;
-    
-    debugger
 
     friendships.forEach((friendship) => {
         if (friendship.frienderId === sessionUser.id && friendship.friendeeId === parseInt(userId) ) {

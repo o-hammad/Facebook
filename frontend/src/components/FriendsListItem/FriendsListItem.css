@@ -1,0 +1,9 @@
+.friendsListIcons {
+    height: 50px;
+    border-radius: 100%;
+}
+
+.friendsListItemContainer {
+    display: flex;
+    margin-bottom: 5%;
+}
