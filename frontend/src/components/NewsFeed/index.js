@@ -16,12 +16,9 @@ function NewsFeed () {
     // const sessionUser = useSelector(state => state.session.user)
     
     useEffect(() => {
-        dispatch(fetchAllPostsThunk())
-    })
-
-    useEffect(() => {
         dispatch(userProfileView(userId))
-    }, [dispatch, userId])
+        dispatch(fetchAllPostsThunk())
+    }, [dispatch])
     
     // if (!sessionUser) return <Redirect to="/login" />;
     

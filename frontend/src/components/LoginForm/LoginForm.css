@@ -2,6 +2,10 @@
     border: solid 1px red;
 } */
 
+.links {
+    display: flex;
+}
+
 .background1 {
     display: flex;
     /* justify-content: center; */
@@ -155,4 +159,5 @@
 
 .gitHubIcon {
     height: 25px;
+    margin-left: 30%;
 }

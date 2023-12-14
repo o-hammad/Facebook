@@ -11,7 +11,7 @@ import { deleteFriendThunk } from '../../store/friend';
 import { useState } from 'react';
 import { Redirect } from 'react-router-dom';
 import Navigation from '../Navigation';
-
+import FriendsImage from "../../assets/images/FriendsImage.png"
 
 function UserProfile () {
     const { userId } = useParams();

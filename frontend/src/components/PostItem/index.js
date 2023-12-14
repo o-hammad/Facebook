@@ -43,6 +43,7 @@ function PostItem (post) {
         return dispatch(deletePostThunk(post.post.id))
     }
 
+    debugger
     return (
         <div className="postItemContainer">
             <div className="upperHalf">
@@ -58,7 +59,7 @@ function PostItem (post) {
                 <p>{post.post?.body}</p>
             </div>
             <div className="editDeletePost">
-                { sessionUser.id === user.id ? (
+                { sessionUser.id === user?.id ? (
                     <button className="editPost" onClick={openModal}>
                         Edit
                     </button>
@@ -71,18 +72,18 @@ function PostItem (post) {
                                 <img src={user?.profileImage} alt="posterProfileImage" className="posterIcon"></img>
                             </div>
                             <div className="upperHalfRight">
-                                <p className="posterNames">{post.post.poster?.first_name} {post.post.poster?.last_name} {">"} {post.post.postee?.first_name} {post.post.postee?.last_name} </p>
+                                <p className="posterNames">{post.post.poster?.first_name} {post.post.poster?.last_name} </p>
                                 <p>{post.post.createdAt?.slice(0, 10)}</p>
                             </div>
                         </div>
                         <div className="body">
-                            <input type="text" value={post.post?.body} className="updatedBody" onChange={(e) => setBody(e.target.value)}>
-                            </input>
+                            {/* <input type="text" defaultValue={post.post?.body} className="updatedBody" onChange={(e) => setBody(e.target.value)}></input> */}
+                            <textarea defaultValue={post.post?.body} className="updatedBody" onChange={(e) => setBody(e.target.value)}></textarea>
                         </div>
-                        <button type="submit" className="editPostButton">Edit Post</button>
+                        <button type="submit" className="editPostButton">Save</button>
                     </form>
                 </Modal>
-                {sessionUser.id === user.id ? (
+                {sessionUser.id === user?.id ? (
                     <button className="deletePost" onClick={handleDelete}>
                         Delete
                     </button> ) :

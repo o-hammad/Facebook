@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import * as sessionActions from '../../store/session';
 import './Navigation.css';
 import { Link } from "react-router-dom";
@@ -7,6 +7,9 @@ import { Link } from "react-router-dom";
 function ProfileButton({ user }) {
     const dispatch = useDispatch();
     const [showMenu, setShowMenu] = useState(false);
+    const sessionUser = useSelector(state => state.session.user)
+    const userId = sessionUser.id
+    const currentUser = useSelector(state => state.users[userId])
 
     const openMenu = () => {
         if (showMenu) return;
@@ -33,13 +36,13 @@ function ProfileButton({ user }) {
     return (
         <>
             <button onClick={openMenu} className="profileLogoutIcon">
-                <img src="https://facebook85-seeds.s3.amazonaws.com/blank-head-profile-pic-for-a-man.jpg" alt="Icon Placeholder" className="icon"/>
+                <img src={currentUser?.profileImage} alt="Icon Placeholder" className="icon"/>
             </button>
             {showMenu && (
                 <ul className="profile-dropdown">
                     <li>
                         <div className="miniProfile">
-                            <Link to={`/users/${user.id}`}>{user.firstName} {user.lastName}</Link>
+                            <img src={currentUser?.profileImage} className="profileButtonImage"></img><Link to={`/users/${user.id}`}>{user.firstName} {user.lastName}</Link>
                         </div>
                     </li>
                     <li>

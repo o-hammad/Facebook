@@ -42,19 +42,27 @@
 }
 
 .miniProfile {
-    height: 50px;
-    width: 100px;
+    height: 100px;
+    width: 150px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     margin-bottom: 10px;
+    border-radius: 5%;
 }
 
 .dropDown {
     list-style-type: none;
     margin: 0;
     margin-top: 1%;
+    border-radius: 5%;
 }
 
 .profileLogoutIcon {
     border: none;
     background: none;
 }
+
+.profileButtonImage {
+    height: 40%;
+}
+
+

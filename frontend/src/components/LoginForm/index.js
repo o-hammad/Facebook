@@ -60,6 +60,10 @@ function LoginForm() {
                 <div className='leftInnerBox'>
                     <img className="fbLogo" src={Facemash} alt="Facebook"></img>
                     <h2>Connect with friends and the world around you on Facemash.</h2>
+                    <div className='links'>
+                        <a href="https://www.linkedin.com/in/omar-hammad-93810413b/" target="_blank"><img src={LinkedIn} className='linkedInIcon'></img></a>
+                        <a href="https://github.com/o-hammad/Facebook.git" target="_blank"><img src={gitHub} className='gitHubIcon'></img></a>
+                    </div>
                 </div>
                 <div className='rightInnerBox'>
                     <div className='loginBox'>
@@ -102,8 +106,6 @@ function LoginForm() {
                 </div>
             </div>
             <div className='lowerBackGround'>
-                <a href="https://www.linkedin.com/in/omar-hammad-93810413b/" target="_blank"><img src={LinkedIn} className='linkedInIcon'></img></a>
-                <a href="https://github.com/o-hammad/Facebook.git" target="_blank"><img src={gitHub} className='gitHubIcon'></img></a>
             </div>
         </div>
     );

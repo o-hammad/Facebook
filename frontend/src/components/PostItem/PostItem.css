@@ -1,3 +1,18 @@
+/* input[type=text] {
+    
+    height: 80px;
+} */
+
+
+
+.updatedBody {
+    height: 190px;
+    width: 95%;
+    text-wrap: wrap;
+    border: none;
+}
+
+
 .posterIcon {
     height: 35px;
     width: 35px;
@@ -61,6 +76,8 @@
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     position: relative;
+    height: 40%;
+    width: 20%;
 }
 
 .close-modal {
@@ -77,4 +94,5 @@
     color: white;
     border: 1px solid lightgray;
     border-radius: 20px;
+    width: 100%;
 }
