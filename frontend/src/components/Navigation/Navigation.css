@@ -65,4 +65,9 @@
     height: 40%;
 }
 
+.profileDropdownContainer {
+    border-radius: 5%;
+    height: 400px;
+}
+
 

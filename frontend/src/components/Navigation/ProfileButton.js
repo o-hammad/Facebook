@@ -39,16 +39,18 @@ function ProfileButton({ user }) {
                 <img src={currentUser?.profileImage} alt="Icon Placeholder" className="icon"/>
             </button>
             {showMenu && (
-                <ul className="profile-dropdown">
-                    <li>
-                        <div className="miniProfile">
-                            <img src={currentUser?.profileImage} className="profileButtonImage"></img><Link to={`/users/${user.id}`}>{user.firstName} {user.lastName}</Link>
-                        </div>
-                    </li>
-                    <li>
-                        <button onClick={logout}>Log Out</button>
-                    </li>
-                </ul>
+                <div className="profileDropdownContainer">
+                    <ul className="profile-dropdown">
+                        <li>
+                            <div className="miniProfile">
+                                <img src={currentUser?.profileImage} className="profileButtonImage"></img><Link to={`/users/${user.id}`}>{user.firstName} {user.lastName}</Link>
+                            </div>
+                        </li>
+                        <li>
+                            <button onClick={logout}>Log Out</button>
+                        </li>
+                    </ul>
+                </div>
             )}
         </>
     );
