@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useState } from "react";
 import Modal from "../Modal";
 import { editPostThunk } from "../../store/post";
+import { Link } from "react-router-dom";
 
 
 function PostItem (post) {
@@ -51,7 +52,9 @@ function PostItem (post) {
                     <img src={user?.profileImage} alt="posterProfileImage" className="posterIcon"></img>
                 </div>
                 <div className="upperHalfRight">
-                    <p className="posterNames">{post.post.poster?.first_name} {post.post.poster?.last_name} {">"} {post.post.postee?.first_name} {post.post.postee?.last_name} </p>
+                    <p><Link to={`/users/${post.post.poster?.id}`}>{post.post.poster?.first_name} {post.post.poster?.last_name}</Link> {"> "} 
+                         <Link to={`/users/${post.post.postee?.id}`}>{post.post.postee?.first_name} {post.post.postee?.last_name}</Link></p>
+                    {/* <p className="posterNames"> {">"} {post.post.postee?.first_name} {post.post.postee?.last_name} </p> */}
                     <p>{post.post.createdAt?.slice(0, 10)}</p>
                 </div>
             </div>
@@ -72,7 +75,7 @@ function PostItem (post) {
                                 <img src={user?.profileImage} alt="posterProfileImage" className="posterIcon"></img>
                             </div>
                             <div className="upperHalfRight">
-                                <p className="posterNames">{post.post.poster?.first_name} {post.post.poster?.last_name} </p>
+                                <p className="posterNames"><Link to={`/users/${post.post.poster?.id}`}>{post.post.poster?.first_name} {post.post.poster?.last_name}</Link> </p>
                                 <p>{post.post.createdAt?.slice(0, 10)}</p>
                             </div>
                         </div>
