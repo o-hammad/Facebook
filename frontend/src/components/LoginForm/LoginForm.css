@@ -4,6 +4,10 @@
 
 .links {
     display: flex;
+    width: fit-content;
+    margin-top: 5%;
+    justify-content: center;
+    align-items: center;
 }
 
 .background1 {
@@ -22,10 +26,11 @@
     background-color: #f0f2f5;
 }
 
-.lowerBackground {
+.lowerBackGround {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    height: 500px;
+    align-items: center;
 }
 
 .leftInnerBox {
@@ -84,7 +89,7 @@
 }
 
 .loginButtonContainer .loginButton {
-    background-color: #1877f2;
+    background-color: #912213;
     color: white;
     font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
@@ -142,7 +147,7 @@
 
 
 .demoLoginButton {
-    background-color: #1877f2;
+    background-color: #912213;
     color: white;
     border: solid 1px lightgray;
     border-radius: 8px;
@@ -161,3 +166,17 @@
     height: 25px;
     margin-left: 30%;
 }
+
+.technologies {
+    justify-content: center;
+    width: fit-content;
+}
+
+.technologies p {
+    margin: 0;
+}
+
+.links p {
+    margin: 0;
+}
+

@@ -45,14 +45,14 @@
 
 .deletePost {
     margin-left: 3%;
-    background-color: #1877f2;
+    background-color: #912213;
     color: white;
     border: 1px solid lightgray;
     border-radius: 20px;
 }
 
 .editPost {
-    background-color: #1877f2;
+    background-color: #912213;
     color: white;
     border: 1px solid lightgray;
     border-radius: 20px;
@@ -90,7 +90,7 @@
 }
 
 .editPostButton {
-    background-color: #1877f2;
+    background-color: #912213;
     color: white;
     border: 1px solid lightgray;
     border-radius: 20px;

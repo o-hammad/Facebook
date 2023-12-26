@@ -60,10 +60,6 @@ function LoginForm() {
                 <div className='leftInnerBox'>
                     <img className="fbLogo" src={Facemash} alt="Facebook"></img>
                     <h2>Connect with friends and the world around you on Facemash.</h2>
-                    <div className='links'>
-                        <a href="https://www.linkedin.com/in/omar-hammad-93810413b/" target="_blank"><img src={LinkedIn} className='linkedInIcon'></img></a>
-                        <a href="https://github.com/o-hammad/Facebook.git" target="_blank"><img src={gitHub} className='gitHubIcon'></img></a>
-                    </div>
                 </div>
                 <div className='rightInnerBox'>
                     <div className='loginBox'>
@@ -106,6 +102,14 @@ function LoginForm() {
                 </div>
             </div>
             <div className='lowerBackGround'>
+                <div className='links'>
+                <p>This site was engineered by Omar Hammad | </p>
+                    <a href="https://www.linkedin.com/in/omar-hammad-93810413b/" target="_blank"><img src={LinkedIn} className='linkedInIcon'></img></a>
+                    <a href="https://github.com/o-hammad/Facebook.git" target="_blank"><img src={gitHub} className='gitHubIcon'></img></a>
+                </div>
+                <div className='technologies'>
+                    <p>This site was made using | Ruby on Rails | PostgreSQL | Webpack | React | Redux | Amazon S3</p>
+                </div>
             </div>
         </div>
     );
