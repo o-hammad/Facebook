@@ -44,7 +44,6 @@ function PostItem (post) {
         return dispatch(deletePostThunk(post.post.id))
     }
 
-    debugger
     return (
         <div className="postItemContainer">
             <div className="upperHalf">

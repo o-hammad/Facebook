@@ -14,7 +14,39 @@
     width: 33%;
 }
 
-.rightSIde {
+.rightSide {
     width: 33%;
     background-color: #f0f2f5;
+    justify-content: right;
+}
+
+.postsHeader {
+    margin-bottom: 5%;
+}
+
+.headshot {
+    height: 200px;
+    border-radius: 100%;
+}
+
+.advertisement {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 5%;
+    padding: 5%;
+    margin-top: 5%;
+    box-sizing: border-box;
+    width: 275px;
+    margin-left: 30%;
+}
+
+.advertisement h5 {
+    margin: 0;
+}
+
+.adHeader {
+    width: fit-content;
 }
