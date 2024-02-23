@@ -22,8 +22,6 @@ function NewsFeed () {
     const user = useSelector(state => state.users[userId]);
     const [body, setBody] = useState("");
     // const sessionUser = useSelector(state => state.session.user)
-    
-    debugger
 
     useEffect(() => {
         dispatch(userProfileView(userId))
@@ -96,7 +94,7 @@ function NewsFeed () {
                         <h5>Sponsored</h5>
                     </div>
                     <div>
-                        <h4>Fullstack Developer for Hire</h4>
+                        <h4>Software Engineer for Hire</h4>
                     </div>
                     <div>
                         <img src={OHHeadshot} className="headshot"></img>

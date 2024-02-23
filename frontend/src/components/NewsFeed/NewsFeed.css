@@ -6,8 +6,10 @@
 }
 
 .leftSide {
-    width: 33%;
+    width: 20%;
     background-color: #f0f2f5;
+    margin-left: 13%;
+    margin-top: .5%;
 }
 
 .postsIndex {
@@ -15,9 +17,10 @@
 }
 
 .rightSide {
-    width: 33%;
+    width: 10%;
     background-color: #f0f2f5;
     justify-content: right;
+    margin-top: 1%;
 }
 
 .postsHeader {

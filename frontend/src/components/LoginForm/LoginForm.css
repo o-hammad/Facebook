@@ -160,11 +160,12 @@
 
 .linkedInIcon {
     height: 25px;
+    margin-left: 30%;
 }
 
 .gitHubIcon {
     height: 25px;
-    margin-left: 30%;
+    margin-left: 50%;
 }
 
 .technologies {
@@ -176,7 +177,7 @@
     margin: 0;
 }
 
-.links p {
+/* .links p {
     margin: 0;
-}
+} */
 
